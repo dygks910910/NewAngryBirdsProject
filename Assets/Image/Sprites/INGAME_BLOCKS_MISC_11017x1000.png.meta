@@ -1,0 +1,1816 @@
+fileFormatVersion: 2
+guid: 3e80e50c056f1b54194043fe54d23e74
+timeCreated: 1466940014
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: INGAME_BLOCKS_MISC_11017x1000_0
+    21300002: INGAME_BLOCKS_MISC_11017x1000_1
+    21300004: INGAME_BLOCKS_MISC_11017x1000_2
+    21300006: INGAME_BLOCKS_MISC_11017x1000_3
+    21300008: INGAME_BLOCKS_MISC_11017x1000_4
+    21300010: INGAME_BLOCKS_MISC_11017x1000_5
+    21300012: INGAME_BLOCKS_MISC_11017x1000_6
+    21300014: INGAME_BLOCKS_MISC_11017x1000_7
+    21300016: INGAME_BLOCKS_MISC_11017x1000_8
+    21300018: INGAME_BLOCKS_MISC_11017x1000_9
+    21300020: INGAME_BLOCKS_MISC_11017x1000_10
+    21300022: INGAME_BLOCKS_MISC_11017x1000_11
+    21300024: INGAME_BLOCKS_MISC_11017x1000_12
+    21300026: INGAME_BLOCKS_MISC_11017x1000_13
+    21300028: INGAME_BLOCKS_MISC_11017x1000_14
+    21300030: INGAME_BLOCKS_MISC_11017x1000_15
+    21300032: INGAME_BLOCKS_MISC_11017x1000_16
+    21300034: INGAME_BLOCKS_MISC_11017x1000_17
+    21300036: INGAME_BLOCKS_MISC_11017x1000_18
+    21300038: INGAME_BLOCKS_MISC_11017x1000_19
+    21300040: INGAME_BLOCKS_MISC_11017x1000_20
+    21300042: INGAME_BLOCKS_MISC_11017x1000_21
+    21300044: INGAME_BLOCKS_MISC_11017x1000_22
+    21300046: INGAME_BLOCKS_MISC_11017x1000_23
+    21300048: INGAME_BLOCKS_MISC_11017x1000_24
+    21300050: INGAME_BLOCKS_MISC_11017x1000_25
+    21300052: INGAME_BLOCKS_MISC_11017x1000_26
+    21300054: INGAME_BLOCKS_MISC_11017x1000_27
+    21300056: INGAME_BLOCKS_MISC_11017x1000_28
+    21300058: INGAME_BLOCKS_MISC_11017x1000_29
+    21300060: INGAME_BLOCKS_MISC_11017x1000_30
+    21300062: INGAME_BLOCKS_MISC_11017x1000_31
+    21300064: INGAME_BLOCKS_MISC_11017x1000_32
+    21300066: INGAME_BLOCKS_MISC_11017x1000_33
+    21300068: INGAME_BLOCKS_MISC_11017x1000_34
+    21300070: INGAME_BLOCKS_MISC_11017x1000_35
+    21300072: INGAME_BLOCKS_MISC_11017x1000_36
+    21300074: INGAME_BLOCKS_MISC_11017x1000_37
+    21300076: INGAME_BLOCKS_MISC_11017x1000_38
+    21300078: INGAME_BLOCKS_MISC_11017x1000_39
+    21300080: INGAME_BLOCKS_MISC_11017x1000_40
+    21300082: INGAME_BLOCKS_MISC_11017x1000_41
+    21300084: INGAME_BLOCKS_MISC_11017x1000_42
+    21300086: INGAME_BLOCKS_MISC_11017x1000_43
+    21300088: INGAME_BLOCKS_MISC_11017x1000_44
+    21300090: INGAME_BLOCKS_MISC_11017x1000_45
+    21300092: INGAME_BLOCKS_MISC_11017x1000_46
+    21300094: INGAME_BLOCKS_MISC_11017x1000_47
+    21300096: INGAME_BLOCKS_MISC_11017x1000_48
+    21300098: INGAME_BLOCKS_MISC_11017x1000_49
+    21300100: INGAME_BLOCKS_MISC_11017x1000_50
+    21300102: INGAME_BLOCKS_MISC_11017x1000_51
+    21300104: INGAME_BLOCKS_MISC_11017x1000_52
+    21300106: INGAME_BLOCKS_MISC_11017x1000_53
+    21300108: INGAME_BLOCKS_MISC_11017x1000_54
+    21300110: INGAME_BLOCKS_MISC_11017x1000_55
+    21300112: INGAME_BLOCKS_MISC_11017x1000_56
+    21300114: INGAME_BLOCKS_MISC_11017x1000_57
+    21300116: INGAME_BLOCKS_MISC_11017x1000_58
+    21300118: INGAME_BLOCKS_MISC_11017x1000_59
+    21300120: INGAME_BLOCKS_MISC_11017x1000_60
+    21300122: INGAME_BLOCKS_MISC_11017x1000_61
+    21300124: INGAME_BLOCKS_MISC_11017x1000_62
+    21300126: INGAME_BLOCKS_MISC_11017x1000_63
+    21300128: INGAME_BLOCKS_MISC_11017x1000_64
+    21300130: INGAME_BLOCKS_MISC_11017x1000_65
+    21300132: INGAME_BLOCKS_MISC_11017x1000_66
+    21300134: INGAME_BLOCKS_MISC_11017x1000_67
+    21300136: INGAME_BLOCKS_MISC_11017x1000_68
+    21300138: INGAME_BLOCKS_MISC_11017x1000_69
+    21300140: INGAME_BLOCKS_MISC_11017x1000_70
+    21300142: INGAME_BLOCKS_MISC_11017x1000_71
+    21300144: INGAME_BLOCKS_MISC_11017x1000_72
+    21300146: INGAME_BLOCKS_MISC_11017x1000_73
+    21300148: INGAME_BLOCKS_MISC_11017x1000_74
+    21300150: INGAME_BLOCKS_MISC_11017x1000_75
+    21300152: INGAME_BLOCKS_MISC_11017x1000_76
+    21300154: INGAME_BLOCKS_MISC_11017x1000_77
+    21300156: INGAME_BLOCKS_MISC_11017x1000_78
+    21300158: INGAME_BLOCKS_MISC_11017x1000_79
+    21300160: INGAME_BLOCKS_MISC_11017x1000_80
+    21300162: INGAME_BLOCKS_MISC_11017x1000_81
+    21300164: INGAME_BLOCKS_MISC_11017x1000_82
+    21300166: INGAME_BLOCKS_MISC_11017x1000_83
+    21300168: INGAME_BLOCKS_MISC_11017x1000_84
+    21300170: INGAME_BLOCKS_MISC_11017x1000_85
+    21300172: INGAME_BLOCKS_MISC_11017x1000_86
+    21300174: INGAME_BLOCKS_MISC_11017x1000_87
+    21300176: INGAME_BLOCKS_MISC_11017x1000_88
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: INGAME_BLOCKS_MISC_11017x1000_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 716
+        width: 272
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 131, y: -47.5}
+        - {x: 136, y: -26.5}
+        - {x: 136, y: 24.5}
+        - {x: 131, y: 48.5}
+        - {x: 113, y: 84.5}
+        - {x: 67, y: 123.5}
+        - {x: 37, y: 134.5}
+        - {x: -29, y: 134.5}
+        - {x: -43, y: 131.5}
+        - {x: -57, y: 126.5}
+        - {x: -94, y: 104.5}
+        - {x: -118, y: 70.5}
+        - {x: -135, y: 40.5}
+        - {x: -136, y: 32.5}
+        - {x: -136, y: -28.5}
+        - {x: -127, y: -63.5}
+        - {x: -96, y: -103.5}
+        - {x: -57, y: -129.5}
+        - {x: -32, y: -134.5}
+        - {x: 30, y: -134.5}
+        - {x: 62, y: -125.5}
+        - {x: 86, y: -111.5}
+        - {x: 116, y: -77.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_1
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 847
+        width: 120
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 74}
+        - {x: -60, y: 44}
+        - {x: -60, y: -54}
+        - {x: -43, y: -74}
+        - {x: 39, y: -74}
+        - {x: 57, y: -70}
+        - {x: 60, y: -60}
+        - {x: 60, y: 56}
+        - {x: 32, y: 74}
+    - name: INGAME_BLOCKS_MISC_11017x1000_2
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 849
+        width: 167
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42.5, y: 67}
+        - {x: 27.5, y: 75}
+        - {x: -35.5, y: 75}
+        - {x: -77.5, y: 59}
+        - {x: -83.5, y: 36}
+        - {x: -83.5, y: -46}
+        - {x: -70.5, y: -75}
+        - {x: 49.5, y: -75}
+        - {x: 76.5, y: -38}
+        - {x: 83.5, y: -7}
+        - {x: 83.5, y: 20}
+    - name: INGAME_BLOCKS_MISC_11017x1000_3
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 850
+        width: 159
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -76.5, y: 74.5}
+        - {x: -79.5, y: 63.5}
+        - {x: -79.5, y: -47.5}
+        - {x: -54.5, y: -74.5}
+        - {x: 55.5, y: -74.5}
+        - {x: 79.5, y: -30.5}
+        - {x: 79.5, y: 71.5}
+        - {x: 63.5, y: 74.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_4
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 858
+        width: 43
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 70.5}
+        - {x: -21.5, y: -70.5}
+        - {x: 21.5, y: -70.5}
+        - {x: 21.5, y: 69.5}
+        - {x: 20.5, y: 70.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_5
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 868
+        width: 138
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 65.5}
+        - {x: -69, y: 49.5}
+        - {x: -69, y: -55.5}
+        - {x: -62, y: -65.5}
+        - {x: 63, y: -65.5}
+        - {x: 69, y: -40.5}
+        - {x: 69, y: 49.5}
+        - {x: 51, y: 65.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_6
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 875
+        width: 43
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.5, y: 61}
+        - {x: 4.5, y: 62}
+        - {x: -21.5, y: 62}
+        - {x: -21.5, y: 3}
+        - {x: -11.5, y: -56}
+        - {x: 2.5, y: -62}
+        - {x: 21.5, y: -62}
+        - {x: 21.5, y: -26}
+        - {x: 20.5, y: -23}
+    - name: INGAME_BLOCKS_MISC_11017x1000_7
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 847
+        width: 101
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_8
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 717
+        width: 125
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 45.5}
+        - {x: -62.5, y: 22.5}
+        - {x: -62.5, y: -30.5}
+        - {x: -56.5, y: -45.5}
+        - {x: 44.5, y: -45.5}
+        - {x: 62.5, y: -41.5}
+        - {x: 62.5, y: 25.5}
+        - {x: 60.5, y: 31.5}
+        - {x: 31.5, y: 44.5}
+        - {x: 29.5, y: 45.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_9
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 768
+        width: 324
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -162, y: 38}
+        - {x: -162, y: -38}
+        - {x: 127, y: -38}
+        - {x: 162, y: -32}
+        - {x: 162, y: 38}
+    - name: INGAME_BLOCKS_MISC_11017x1000_10
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 718
+        width: 88
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 63.5}
+        - {x: -44, y: 53.5}
+        - {x: -44, y: -63.5}
+        - {x: 44, y: -63.5}
+        - {x: 44, y: 60.5}
+        - {x: 38, y: 63.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_11
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 736
+        width: 59
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 54.5}
+        - {x: -29.5, y: 36.5}
+        - {x: -29.5, y: -36.5}
+        - {x: -3.5, y: -54.5}
+        - {x: 8.5, y: -54.5}
+        - {x: 29.5, y: -29.5}
+        - {x: 29.5, y: 35.5}
+        - {x: 18.5, y: 54.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_12
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 713
+        width: 144
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 21}
+        - {x: -46, y: 14}
+        - {x: -47, y: 10}
+        - {x: -47, y: 12}
+        - {x: -46, y: 13}
+        - {x: -46, y: 21}
+        - {x: -63, y: 21}
+        - {x: -67, y: 14}
+        - {x: -72, y: 1}
+        - {x: -72, y: -21}
+        - {x: 72, y: -21}
+        - {x: 72, y: 21}
+    - name: INGAME_BLOCKS_MISC_11017x1000_13
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 713
+        width: 163
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 80.5, y: 21}
+        - {x: -81.5, y: 21}
+        - {x: -81.5, y: -21}
+        - {x: 75.5, y: -21}
+        - {x: 79.5, y: -18}
+        - {x: 81.5, y: -4}
+        - {x: 81.5, y: 20}
+    - name: INGAME_BLOCKS_MISC_11017x1000_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 457
+        width: 221
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43.5, y: 106}
+        - {x: 91.5, y: 15}
+        - {x: 58.5, y: -52}
+        - {x: -11.5, y: -78}
+        - {x: -82.5, y: -8}
+        - {x: -72.5, y: 38}
+        - {x: 11.5, y: 49}
+        - {x: 24.5, y: -16}
+        - {x: -17.5, y: -32}
+        - {x: 13.5, y: 1}
+        - {x: 9.5, y: 13}
+        - {x: -2.5, y: 30}
+        - {x: -26.5, y: 39}
+        - {x: -62.5, y: 9}
+        - {x: -58.5, y: -15}
+        - {x: -48.5, y: -41}
+        - {x: -26.5, y: -57}
+        - {x: 5.5, y: -65}
+        - {x: 63.5, y: -33}
+        - {x: 68.5, y: 25}
+        - {x: 24.5, y: 90}
+        - {x: -14.5, y: 106}
+        - {x: -55.5, y: 106}
+        - {x: -110.5, y: 53}
+        - {x: -110.5, y: -38}
+        - {x: -98.5, y: -64}
+        - {x: -46.5, y: -106}
+        - {x: 48.5, y: -106}
+        - {x: 110.5, y: -53}
+        - {x: 110.5, y: 63}
+        - {x: 72.5, y: 106}
+    - name: INGAME_BLOCKS_MISC_11017x1000_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 491
+        width: 38
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 99.5}
+        - {x: -19, y: -6.5}
+        - {x: -19, y: -99.5}
+        - {x: 6, y: -99.5}
+        - {x: 19, y: 10.5}
+        - {x: 19, y: 97.5}
+        - {x: 18, y: 99.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_16
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 533
+        width: 12
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_17
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 612
+        width: 12
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_18
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 664
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_19
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 577
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44, y: 63}
+        - {x: -63, y: 63}
+        - {x: -76, y: 26}
+        - {x: -76, y: -58}
+        - {x: -75, y: -62}
+        - {x: -68, y: -63}
+        - {x: 56, y: -63}
+        - {x: 74, y: -44}
+        - {x: 76, y: -29}
+        - {x: 76, y: 17}
+    - name: INGAME_BLOCKS_MISC_11017x1000_20
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 580
+        width: 132
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 61.5}
+        - {x: -66, y: 25.5}
+        - {x: -66, y: -39.5}
+        - {x: -57, y: -53.5}
+        - {x: -32, y: -61.5}
+        - {x: 45, y: -61.5}
+        - {x: 66, y: -47.5}
+        - {x: 66, y: 47.5}
+        - {x: 60, y: 61.5}
+      - - {x: -40, y: 1.5}
+        - {x: -17, y: 32.5}
+        - {x: 28, y: 38.5}
+        - {x: -22, y: -40.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_21
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 582
+        width: 118
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59, y: -11.5}
+        - {x: 59, y: 15.5}
+        - {x: 29, y: 40.5}
+        - {x: 22, y: 57.5}
+        - {x: 16, y: 60.5}
+        - {x: -24, y: 60.5}
+        - {x: -59, y: 14.5}
+        - {x: -59, y: -14.5}
+        - {x: -44, y: -33.5}
+        - {x: -20, y: -60.5}
+        - {x: 17, y: -60.5}
+        - {x: 37, y: -34.5}
+        - {x: 40, y: -28.5}
+        - {x: 57, y: -14.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_22
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 598
+        width: 113
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 52.5}
+        - {x: -45.5, y: 50.5}
+        - {x: -56.5, y: 22.5}
+        - {x: -56.5, y: -29.5}
+        - {x: -45.5, y: -52.5}
+        - {x: 51.5, y: -52.5}
+        - {x: 56.5, y: -47.5}
+        - {x: 56.5, y: 47.5}
+        - {x: 44.5, y: 52.5}
+      - - {x: -32.5, y: 1.5}
+        - {x: 5.5, y: 32.5}
+        - {x: 23.5, y: 32.5}
+        - {x: -16.5, y: -32.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_23
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 598
+        width: 113
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 52.5}
+        - {x: -45.5, y: 50.5}
+        - {x: -56.5, y: 22.5}
+        - {x: -56.5, y: -29.5}
+        - {x: -45.5, y: -52.5}
+        - {x: 51.5, y: -52.5}
+        - {x: 56.5, y: -47.5}
+        - {x: 56.5, y: 47.5}
+        - {x: 44.5, y: 52.5}
+      - - {x: -32.5, y: 1.5}
+        - {x: 5.5, y: 32.5}
+        - {x: 23.5, y: 32.5}
+        - {x: -16.5, y: -32.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_24
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 603
+        width: 38
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 50}
+        - {x: -19, y: 47}
+        - {x: -19, y: -43}
+        - {x: -17, y: -50}
+        - {x: 17, y: -50}
+        - {x: 19, y: -44}
+        - {x: 19, y: 42}
+        - {x: 14, y: 50}
+    - name: INGAME_BLOCKS_MISC_11017x1000_25
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 559
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_26
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 470
+        width: 113
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 52.5}
+        - {x: -45.5, y: 50.5}
+        - {x: -56.5, y: 22.5}
+        - {x: -56.5, y: -29.5}
+        - {x: -45.5, y: -52.5}
+        - {x: 51.5, y: -52.5}
+        - {x: 56.5, y: -47.5}
+        - {x: 56.5, y: 47.5}
+        - {x: 44.5, y: 52.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_27
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 476
+        width: 163
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81.5, y: 49}
+        - {x: -81.5, y: -43}
+        - {x: -73.5, y: -49}
+        - {x: 73.5, y: -49}
+        - {x: 81.5, y: -22}
+        - {x: 81.5, y: 44}
+        - {x: 66.5, y: 49}
+    - name: INGAME_BLOCKS_MISC_11017x1000_28
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 501
+        width: 135
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62.5, y: 35.5}
+        - {x: -67.5, y: 4.5}
+        - {x: -67.5, y: -35.5}
+        - {x: 67.5, y: -35.5}
+        - {x: 67.5, y: 33.5}
+        - {x: 65.5, y: 35.5}
+      - - {x: 58.5, y: 2.5}
+        - {x: 58.5, y: -10.5}
+        - {x: 60.5, y: -14.5}
+        - {x: 67.5, y: -14.5}
+        - {x: 67.5, y: 20.5}
+        - {x: 64.5, y: 19.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_29
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 524
+        width: 21
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_30
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 477
+        width: 138
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 49}
+        - {x: -69, y: 19}
+        - {x: -69, y: -20}
+        - {x: -13, y: -49}
+        - {x: 69, y: -49}
+        - {x: 69, y: 49}
+    - name: INGAME_BLOCKS_MISC_11017x1000_31
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 484
+        width: 101
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 45.5}
+        - {x: -50.5, y: 28.5}
+        - {x: -50.5, y: -28.5}
+        - {x: -42.5, y: -45.5}
+        - {x: 50.5, y: -45.5}
+        - {x: 50.5, y: 44.5}
+        - {x: 47.5, y: 45.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_32
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 458
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_33
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 468
+        width: 43
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: -10.5}
+        - {x: 18.5, y: 19.5}
+        - {x: 18.5, y: 30.5}
+        - {x: 15.5, y: 31.5}
+        - {x: -4.5, y: 31.5}
+        - {x: -6.5, y: 29.5}
+        - {x: -21.5, y: -13.5}
+        - {x: -21.5, y: -29.5}
+        - {x: -18.5, y: -31.5}
+        - {x: 21.5, y: -31.5}
+        - {x: 21.5, y: -17.5}
+        - {x: 15.5, y: -13.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_34
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 383
+        width: 98
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 45.5}
+        - {x: -49, y: 25.5}
+        - {x: -49, y: -30.5}
+        - {x: -48, y: -33.5}
+        - {x: -36, y: -45.5}
+        - {x: 33, y: -45.5}
+        - {x: 49, y: -40.5}
+        - {x: 49, y: 27.5}
+        - {x: 31, y: 45.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_35
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 384
+        width: 125
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62.5, y: 45}
+        - {x: -62.5, y: -45}
+        - {x: 62.5, y: -45}
+        - {x: 62.5, y: 45}
+    - name: INGAME_BLOCKS_MISC_11017x1000_36
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 385
+        width: 124
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 44.5}
+        - {x: -62, y: 34.5}
+        - {x: -62, y: -44.5}
+        - {x: 62, y: -44.5}
+        - {x: 62, y: 37.5}
+        - {x: 44, y: 44.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_37
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 387
+        width: 112
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 43}
+        - {x: -14, y: 41}
+        - {x: -48, y: -7}
+        - {x: -56, y: -30}
+        - {x: -56, y: -43}
+        - {x: 56, y: -43}
+        - {x: 56, y: -32}
+        - {x: 10, y: 43}
+    - name: INGAME_BLOCKS_MISC_11017x1000_38
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 386
+        width: 71
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 44}
+        - {x: -35.5, y: -23}
+        - {x: -27.5, y: -44}
+        - {x: 19.5, y: -44}
+        - {x: 35.5, y: -15}
+        - {x: 35.5, y: 44}
+    - name: INGAME_BLOCKS_MISC_11017x1000_39
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 423
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 258
+        width: 82
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 98.5}
+        - {x: 11, y: 98.5}
+        - {x: 3, y: 92.5}
+        - {x: 9, y: 70.5}
+        - {x: -17, y: 98.5}
+        - {x: -32, y: 98.5}
+        - {x: -41, y: 94.5}
+        - {x: -41, y: 43.5}
+        - {x: 11, y: -98.5}
+        - {x: 39, y: -98.5}
+        - {x: 41, y: -58.5}
+        - {x: 41, y: 65.5}
+        - {x: 40, y: 68.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_41
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 276
+        width: 102
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 89.5}
+        - {x: -31, y: 89.5}
+        - {x: -46, y: 72.5}
+        - {x: -51, y: 66.5}
+        - {x: -51, y: -89.5}
+        - {x: 46, y: -89.5}
+        - {x: 51, y: -80.5}
+        - {x: 51, y: 75.5}
+        - {x: 49, y: 80.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_42
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 297
+        width: 118
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: -79}
+        - {x: 22, y: -79}
+        - {x: 59, y: -34}
+        - {x: 59, y: 26}
+        - {x: 7, y: 79}
+        - {x: -59, y: 79}
+        - {x: -59, y: -32}
+    - name: INGAME_BLOCKS_MISC_11017x1000_43
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 364
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 52}
+        - {x: -31, y: 51}
+        - {x: -52, y: 26}
+        - {x: -52, y: -25}
+        - {x: -49, y: -38}
+        - {x: -22, y: -52}
+        - {x: 33, y: -52}
+        - {x: 52, y: -38}
+        - {x: 52, y: 30}
+        - {x: 43, y: 52}
+    - name: INGAME_BLOCKS_MISC_11017x1000_44
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 290
+        width: 93
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 45.5}
+        - {x: -46.5, y: 27.5}
+        - {x: -46.5, y: -45.5}
+        - {x: 34.5, y: -45.5}
+        - {x: 46.5, y: -24.5}
+        - {x: 46.5, y: 27.5}
+        - {x: 31.5, y: 45.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_45
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 295
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 43.5}
+        - {x: -43.5, y: 28.5}
+        - {x: -43.5, y: -20.5}
+        - {x: 4.5, y: -43.5}
+        - {x: 20.5, y: -43.5}
+        - {x: 43.5, y: 9.5}
+        - {x: 43.5, y: 24.5}
+        - {x: 20.5, y: 43.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_46
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 299
+        width: 114
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57, y: 34.5}
+        - {x: 44, y: 37.5}
+        - {x: 40, y: 32.5}
+        - {x: 39, y: 20.5}
+        - {x: 36, y: 24.5}
+        - {x: 39, y: 28.5}
+        - {x: 39, y: 37.5}
+        - {x: 37, y: 41.5}
+        - {x: -40, y: 41.5}
+        - {x: -39, y: 29.5}
+        - {x: -35, y: 24.5}
+        - {x: -39, y: 20.5}
+        - {x: -39, y: 30.5}
+        - {x: -46, y: 35.5}
+        - {x: -53, y: 34.5}
+        - {x: -57, y: 32.5}
+        - {x: -57, y: -14.5}
+        - {x: -51, y: -41.5}
+        - {x: 52, y: -41.5}
+        - {x: 56, y: -28.5}
+        - {x: 57, y: -19.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_47
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 300
+        width: 122
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 41}
+        - {x: -61, y: -41}
+        - {x: 61, y: -41}
+        - {x: 61, y: 41}
+    - name: INGAME_BLOCKS_MISC_11017x1000_48
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 312
+        width: 95
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.5, y: 33}
+        - {x: -44.5, y: 32}
+        - {x: -47.5, y: 17}
+        - {x: -47.5, y: -21}
+        - {x: -37.5, y: -33}
+        - {x: 41.5, y: -33}
+        - {x: 47.5, y: -23}
+        - {x: 47.5, y: 27}
+        - {x: 35.5, y: 33}
+    - name: INGAME_BLOCKS_MISC_11017x1000_49
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 330
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 26}
+        - {x: -26, y: -5}
+        - {x: -20, y: -23}
+        - {x: -17, y: -26}
+        - {x: 14, y: -26}
+        - {x: 22, y: -24}
+        - {x: 26, y: -4}
+        - {x: 26, y: 24}
+        - {x: 20, y: 26}
+    - name: INGAME_BLOCKS_MISC_11017x1000_50
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 267
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_51
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 258
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40, y: 49}
+        - {x: 29, y: 52}
+        - {x: -47, y: 52}
+        - {x: -52, y: 50}
+        - {x: -52, y: -52}
+        - {x: 29, y: -52}
+        - {x: 49, y: -36}
+        - {x: 52, y: -22}
+        - {x: 52, y: 24}
+    - name: INGAME_BLOCKS_MISC_11017x1000_52
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 199
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 44.5}
+        - {x: -36, y: 22.5}
+        - {x: -36, y: -8.5}
+        - {x: -18, y: -44.5}
+        - {x: 16, y: -44.5}
+        - {x: 24, y: -42.5}
+        - {x: 36, y: -10.5}
+        - {x: 36, y: 14.5}
+        - {x: 20, y: 44.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_53
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 211
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 41}
+        - {x: -41, y: -41}
+        - {x: 41, y: -41}
+        - {x: 41, y: 41}
+    - name: INGAME_BLOCKS_MISC_11017x1000_54
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 219
+        width: 163
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42.5, y: 39}
+        - {x: -54.5, y: 39}
+        - {x: -81.5, y: 5}
+        - {x: -81.5, y: -39}
+        - {x: 75.5, y: -39}
+        - {x: 81.5, y: -23}
+        - {x: 81.5, y: 2}
+        - {x: 50.5, y: 35}
+    - name: INGAME_BLOCKS_MISC_11017x1000_55
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 232
+        width: 106
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53, y: 32.5}
+        - {x: -53, y: -21.5}
+        - {x: -43, y: -32.5}
+        - {x: 40, y: -32.5}
+        - {x: 53, y: -1.5}
+        - {x: 53, y: 32.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_56
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 244
+        width: 75
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.5, y: 26.5}
+        - {x: -37.5, y: 26.5}
+        - {x: -37.5, y: -15.5}
+        - {x: -31.5, y: -25.5}
+        - {x: -25.5, y: -26.5}
+        - {x: 30.5, y: -26.5}
+        - {x: 37.5, y: -19.5}
+        - {x: 37.5, y: 9.5}
+        - {x: 35.5, y: 18.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_57
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 247
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 25}
+        - {x: -21, y: 16}
+        - {x: -21, y: -25}
+        - {x: 21, y: -25}
+        - {x: 21, y: 16}
+        - {x: 12, y: 25}
+    - name: INGAME_BLOCKS_MISC_11017x1000_58
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 80
+        width: 189
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -89.5, y: 88}
+        - {x: -94.5, y: 78}
+        - {x: -94.5, y: -42}
+        - {x: -75.5, y: -88}
+        - {x: 56.5, y: -88}
+        - {x: 94.5, y: -71}
+        - {x: 94.5, y: 88}
+      - - {x: -55.5, y: 16}
+        - {x: -56.5, y: 22}
+        - {x: -64.5, y: 30}
+        - {x: -65.5, y: 29}
+        - {x: -61.5, y: 26}
+        - {x: -51.5, y: 26}
+        - {x: -42.5, y: 30}
+        - {x: -33.5, y: 36}
+    - name: INGAME_BLOCKS_MISC_11017x1000_59
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 98
+        width: 117
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.5, y: 79}
+        - {x: -58.5, y: 26}
+        - {x: -58.5, y: 1}
+        - {x: -9.5, y: -79}
+        - {x: 6.5, y: -79}
+        - {x: 58.5, y: 35}
+        - {x: 58.5, y: 77}
+        - {x: 52.5, y: 79}
+    - name: INGAME_BLOCKS_MISC_11017x1000_60
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 152
+        width: 113
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 52.5}
+        - {x: -45.5, y: 50.5}
+        - {x: -56.5, y: 22.5}
+        - {x: -56.5, y: -29.5}
+        - {x: -45.5, y: -52.5}
+        - {x: 51.5, y: -52.5}
+        - {x: 56.5, y: -47.5}
+        - {x: 56.5, y: 47.5}
+        - {x: 44.5, y: 52.5}
+      - - {x: -30.5, y: -2.5}
+        - {x: -5.5, y: 30.5}
+        - {x: 23.5, y: 32.5}
+        - {x: -16.5, y: -32.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_61
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 109
+        width: 91
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 44}
+        - {x: -33.5, y: 39}
+        - {x: -45.5, y: 23}
+        - {x: -45.5, y: -42}
+        - {x: -44.5, y: -44}
+        - {x: 33.5, y: -44}
+        - {x: 45.5, y: -40}
+        - {x: 45.5, y: 44}
+    - name: INGAME_BLOCKS_MISC_11017x1000_62
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 127
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 41}
+        - {x: -41, y: -41}
+        - {x: 41, y: -41}
+        - {x: 41, y: 41}
+      - - {x: -26, y: 21}
+        - {x: 26, y: 20}
+        - {x: 27, y: -21}
+        - {x: -16, y: -26}
+    - name: INGAME_BLOCKS_MISC_11017x1000_63
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 142
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 37}
+        - {x: -39, y: 29}
+        - {x: -39, y: -28}
+        - {x: -33, y: -37}
+        - {x: -12, y: -37}
+        - {x: -4, y: -15}
+        - {x: -5, y: -8}
+        - {x: 19, y: -35}
+        - {x: 24, y: -37}
+        - {x: 39, y: -37}
+        - {x: 39, y: 16}
+        - {x: 18, y: 37}
+    - name: INGAME_BLOCKS_MISC_11017x1000_64
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 143
+        width: 56
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 37}
+        - {x: -23, y: 37}
+        - {x: -28, y: 27}
+        - {x: -28, y: -12}
+        - {x: -12, y: -37}
+        - {x: 4, y: -37}
+        - {x: 28, y: 8}
+        - {x: 28, y: 25}
+    - name: INGAME_BLOCKS_MISC_11017x1000_65
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 179
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 25.5}
+        - {x: -27, y: -24.5}
+        - {x: -20, y: -25.5}
+        - {x: 14, y: -25.5}
+        - {x: 27, y: -6.5}
+        - {x: 27, y: 14.5}
+        - {x: 8, y: 25.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_66
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 180
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.5, y: 24.5}
+        - {x: 0.5, y: 24.5}
+        - {x: -17.5, y: 16.5}
+        - {x: -25.5, y: 3.5}
+        - {x: -25.5, y: -24.5}
+        - {x: 25.5, y: -24.5}
+        - {x: 25.5, y: 21.5}
+        - {x: 24.5, y: 23.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_67
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 185
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 21.5}
+        - {x: -21.5, y: 12.5}
+        - {x: -21.5, y: -17.5}
+        - {x: -11.5, y: -21.5}
+        - {x: 16.5, y: -21.5}
+        - {x: 21.5, y: -16.5}
+        - {x: 21.5, y: 13.5}
+        - {x: 14.5, y: 21.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_68
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 185
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 21.5}
+        - {x: -21.5, y: 12.5}
+        - {x: -21.5, y: -17.5}
+        - {x: -11.5, y: -21.5}
+        - {x: 16.5, y: -21.5}
+        - {x: 21.5, y: -16.5}
+        - {x: 21.5, y: 13.5}
+        - {x: 14.5, y: 21.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_69
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 58
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 46.5}
+        - {x: -20.5, y: 46.5}
+        - {x: -41.5, y: 33.5}
+        - {x: -48.5, y: 7.5}
+        - {x: -48.5, y: -28.5}
+        - {x: -18.5, y: -46.5}
+        - {x: 33.5, y: -46.5}
+        - {x: 48.5, y: -25.5}
+        - {x: 48.5, y: 14.5}
+        - {x: 29.5, y: 41.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_70
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 71
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 34.5}
+        - {x: -35, y: -34.5}
+        - {x: 35, y: -34.5}
+        - {x: 35, y: 34.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_71
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 80
+        width: 75
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.5, y: -15}
+        - {x: -37.5, y: -30}
+        - {x: -19.5, y: -30}
+        - {x: 9.5, y: -26}
+        - {x: 37.5, y: 9}
+        - {x: 37.5, y: 30}
+        - {x: 18.5, y: 30}
+        - {x: -5.5, y: 20}
+    - name: INGAME_BLOCKS_MISC_11017x1000_72
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 127
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 25}
+        - {x: -18.5, y: -4}
+        - {x: -18.5, y: -25}
+        - {x: 18.5, y: -25}
+        - {x: 18.5, y: -5}
+        - {x: 12.5, y: 20}
+        - {x: 2.5, y: 25}
+    - name: INGAME_BLOCKS_MISC_11017x1000_73
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 135
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 21.5}
+        - {x: -22, y: -21.5}
+        - {x: 22, y: -21.5}
+        - {x: 22, y: 21.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_74
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 135
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 21.5}
+        - {x: -22, y: -21.5}
+        - {x: 22, y: -21.5}
+        - {x: 22, y: 21.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_75
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 19
+        width: 83
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 44}
+        - {x: -41.5, y: 30}
+        - {x: -41.5, y: -44}
+        - {x: 41.5, y: -44}
+        - {x: 41.5, y: 32}
+        - {x: 15.5, y: 44}
+    - name: INGAME_BLOCKS_MISC_11017x1000_76
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 43
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: 41}
+        - {x: 25, y: 41}
+        - {x: -41, y: -28}
+        - {x: -41, y: -41}
+        - {x: 41, y: -41}
+    - name: INGAME_BLOCKS_MISC_11017x1000_77
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 81
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 21.5}
+        - {x: -22, y: -21.5}
+        - {x: 22, y: -21.5}
+        - {x: 22, y: 21.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_78
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 97
+        width: 128
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 17}
+        - {x: -64, y: 17}
+        - {x: -64, y: 12}
+        - {x: -19, y: -17}
+        - {x: 59, y: -17}
+        - {x: 64, y: -13}
+        - {x: 64, y: -1}
+        - {x: 57, y: 7}
+    - name: INGAME_BLOCKS_MISC_11017x1000_79
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 180
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -85, y: 38.5}
+        - {x: -90, y: 21.5}
+        - {x: -90, y: -38.5}
+        - {x: 90, y: -38.5}
+        - {x: 90, y: 20.5}
+        - {x: 64, y: 38.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1
+        width: 92
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 47.5}
+        - {x: -34, y: 44.5}
+        - {x: -46, y: 36.5}
+        - {x: -46, y: -30.5}
+        - {x: -36, y: -47.5}
+        - {x: 37, y: -47.5}
+        - {x: 46, y: -43.5}
+        - {x: 46, y: 31.5}
+        - {x: 27, y: 47.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_81
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 15
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 27}
+        - {x: -26, y: 11}
+        - {x: -5, y: -26}
+        - {x: 8, y: -27}
+        - {x: 26, y: -27}
+        - {x: 26, y: 5}
+        - {x: -7, y: 27}
+    - name: INGAME_BLOCKS_MISC_11017x1000_82
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 22
+        width: 83
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 28}
+        - {x: -41.5, y: 10}
+        - {x: -41.5, y: -28}
+        - {x: 33.5, y: -28}
+        - {x: 41.5, y: -20}
+        - {x: 41.5, y: 21}
+        - {x: -3.5, y: 28}
+    - name: INGAME_BLOCKS_MISC_11017x1000_83
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 32
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 21.5}
+        - {x: -21.5, y: 12.5}
+        - {x: -21.5, y: -17.5}
+        - {x: -11.5, y: -21.5}
+        - {x: 16.5, y: -21.5}
+        - {x: 21.5, y: -16.5}
+        - {x: 21.5, y: 13.5}
+        - {x: 14.5, y: 21.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_84
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 68
+        width: 139
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_MISC_11017x1000_85
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: -19.5}
+        - {x: -22, y: -27.5}
+        - {x: 10, y: -27.5}
+        - {x: 27, y: -18.5}
+        - {x: 27, y: 19.5}
+        - {x: 26, y: 21.5}
+        - {x: 19, y: 27.5}
+        - {x: -12, y: 27.5}
+        - {x: -27, y: 19.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_86
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 0
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 27.5}
+        - {x: -12.5, y: 27.5}
+        - {x: -23.5, y: 23.5}
+        - {x: -23.5, y: -23.5}
+        - {x: -21.5, y: -27.5}
+        - {x: 15.5, y: -27.5}
+        - {x: 23.5, y: -13.5}
+        - {x: 23.5, y: 8.5}
+        - {x: 16.5, y: 23.5}
+    - name: INGAME_BLOCKS_MISC_11017x1000_87
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1
+        width: 58
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 20}
+        - {x: -22, y: 20}
+        - {x: -27, y: 16}
+        - {x: -29, y: 3}
+        - {x: -29, y: -20}
+        - {x: 28, y: -20}
+        - {x: 29, y: -19}
+        - {x: 29, y: 8}
+        - {x: 26, y: 18}
+    - name: INGAME_BLOCKS_MISC_11017x1000_88
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 40
+        width: 118
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

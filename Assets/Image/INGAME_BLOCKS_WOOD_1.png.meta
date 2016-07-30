@@ -1,0 +1,835 @@
+fileFormatVersion: 2
+guid: 14db097474eb16c4c86414ef8e06a499
+timeCreated: 1465654148
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: INGAME_BLOCKS_WOOD_1_0
+    21300002: INGAME_BLOCKS_WOOD_1_1
+    21300004: INGAME_BLOCKS_WOOD_1_2
+    21300006: INGAME_BLOCKS_WOOD_1_3
+    21300008: INGAME_BLOCKS_WOOD_1_4
+    21300010: INGAME_BLOCKS_WOOD_1_5
+    21300012: INGAME_BLOCKS_WOOD_1_6
+    21300014: INGAME_BLOCKS_WOOD_1_7
+    21300016: INGAME_BLOCKS_WOOD_1_8
+    21300018: INGAME_BLOCKS_WOOD_1_9
+    21300020: INGAME_BLOCKS_WOOD_1_10
+    21300022: INGAME_BLOCKS_WOOD_1_11
+    21300024: INGAME_BLOCKS_WOOD_1_12
+    21300026: INGAME_BLOCKS_WOOD_1_13
+    21300028: INGAME_BLOCKS_WOOD_1_14
+    21300030: INGAME_BLOCKS_WOOD_1_15
+    21300032: INGAME_BLOCKS_WOOD_1_16
+    21300034: INGAME_BLOCKS_WOOD_1_17
+    21300036: INGAME_BLOCKS_WOOD_1_18
+    21300038: INGAME_BLOCKS_WOOD_1_19
+    21300040: INGAME_BLOCKS_WOOD_1_20
+    21300042: INGAME_BLOCKS_WOOD_1_21
+    21300044: INGAME_BLOCKS_WOOD_1_22
+    21300046: INGAME_BLOCKS_WOOD_1_23
+    21300048: INGAME_BLOCKS_WOOD_1_24
+    21300050: INGAME_BLOCKS_WOOD_1_25
+    21300052: INGAME_BLOCKS_WOOD_1_26
+    21300054: INGAME_BLOCKS_WOOD_1_27
+    21300056: INGAME_BLOCKS_WOOD_1_28
+    21300058: INGAME_BLOCKS_WOOD_1_29
+    21300060: INGAME_BLOCKS_WOOD_1_30
+    21300062: INGAME_BLOCKS_WOOD_1_31
+    21300064: INGAME_BLOCKS_WOOD_1_32
+    21300066: INGAME_BLOCKS_WOOD_1_33
+    21300068: INGAME_BLOCKS_WOOD_1_34
+    21300070: INGAME_BLOCKS_WOOD_1_35
+    21300072: INGAME_BLOCKS_WOOD_1_36
+    21300074: INGAME_BLOCKS_WOOD_1_37
+    21300076: INGAME_BLOCKS_WOOD_1_38
+    21300078: INGAME_BLOCKS_WOOD_1_39
+    21300080: INGAME_BLOCKS_WOOD_1_40
+    21300082: INGAME_BLOCKS_WOOD_1_41
+    21300084: INGAME_BLOCKS_WOOD_1_42
+    21300086: INGAME_BLOCKS_WOOD_1_43
+    21300088: INGAME_BLOCKS_WOOD_1_44
+    21300090: INGAME_BLOCKS_WOOD_1_45
+    21300092: INGAME_BLOCKS_WOOD_1_46
+    21300094: INGAME_BLOCKS_WOOD_1_47
+    21300096: INGAME_BLOCKS_WOOD_1_48
+    21300098: INGAME_BLOCKS_WOOD_1_49
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: INGAME_BLOCKS_WOOD_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 306
+        width: 85
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 42}
+        - {x: -42.5, y: -42}
+        - {x: 42.5, y: -42}
+        - {x: 42.5, y: 42}
+    - name: INGAME_BLOCKS_WOOD_1_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 307
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 41.5}
+        - {x: -37.5, y: -5.5}
+        - {x: -40.5, y: -20.5}
+        - {x: -40.5, y: -41.5}
+        - {x: 40.5, y: -41.5}
+        - {x: 40.5, y: -29.5}
+        - {x: 6.5, y: 41.5}
+    - name: INGAME_BLOCKS_WOOD_1_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 308
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 41}
+        - {x: -40, y: -41}
+        - {x: 40, y: -41}
+        - {x: 40, y: -27}
+        - {x: -35, y: 41}
+    - name: INGAME_BLOCKS_WOOD_1_3
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 308
+        width: 81
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 41}
+        - {x: -40.5, y: -41}
+        - {x: 40.5, y: -41}
+        - {x: 40.5, y: -26}
+        - {x: -34.5, y: 41}
+    - name: INGAME_BLOCKS_WOOD_1_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 309
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 40.5}
+        - {x: -40.5, y: -38.5}
+        - {x: -39.5, y: -40.5}
+        - {x: 40.5, y: -40.5}
+        - {x: 40.5, y: -32.5}
+        - {x: -30.5, y: 40.5}
+    - name: INGAME_BLOCKS_WOOD_1_5
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 310
+        width: 82
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 40}
+        - {x: -41, y: -40}
+        - {x: 41, y: -40}
+        - {x: 41, y: -32}
+        - {x: -34, y: 40}
+    - name: INGAME_BLOCKS_WOOD_1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 41}
+        - {x: -41.5, y: -41}
+        - {x: 41.5, y: -41}
+        - {x: 41.5, y: 41}
+    - name: INGAME_BLOCKS_WOOD_1_7
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 223
+        width: 84
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 41}
+        - {x: -42, y: -22}
+        - {x: -42, y: -41}
+        - {x: 42, y: -41}
+        - {x: 42, y: -28}
+        - {x: 3, y: 41}
+      - - {x: 39, y: -2}
+        - {x: 41, y: -4}
+        - {x: 42, y: -4}
+        - {x: 42, y: 15}
+        - {x: 39, y: 14}
+    - name: INGAME_BLOCKS_WOOD_1_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 232
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 38}
+        - {x: -38, y: 21}
+        - {x: -38, y: -25}
+        - {x: -25, y: -38}
+        - {x: 21, y: -38}
+        - {x: 38, y: -32}
+        - {x: 38, y: 30}
+        - {x: 23, y: 38}
+    - name: INGAME_BLOCKS_WOOD_1_9
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 223
+        width: 82
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 20.5}
+        - {x: -41, y: -20.5}
+        - {x: 41, y: -20.5}
+        - {x: 41, y: 20.5}
+    - name: INGAME_BLOCKS_WOOD_1_10
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 266
+        width: 83
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 21}
+        - {x: -41.5, y: -20}
+        - {x: -40.5, y: -21}
+        - {x: 41.5, y: -21}
+        - {x: 41.5, y: 20}
+        - {x: 40.5, y: 21}
+    - name: INGAME_BLOCKS_WOOD_1_11
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 265
+        width: 86
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 21.5}
+        - {x: -43, y: 19.5}
+        - {x: -43, y: -21.5}
+        - {x: 43, y: -21.5}
+        - {x: 43, y: 20.5}
+        - {x: 41, y: 21.5}
+    - name: INGAME_BLOCKS_WOOD_1_12
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 264
+        width: 85
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 22.5}
+        - {x: -42.5, y: -20.5}
+        - {x: -39.5, y: -21.5}
+        - {x: -31.5, y: -22.5}
+        - {x: 42.5, y: -22.5}
+        - {x: 42.5, y: 22.5}
+    - name: INGAME_BLOCKS_WOOD_1_13
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 224
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 20}
+        - {x: -21, y: -14}
+        - {x: -19, y: -20}
+        - {x: 17, y: -20}
+        - {x: 21, y: -18}
+        - {x: 21, y: 18}
+        - {x: 16, y: 20}
+    - name: INGAME_BLOCKS_WOOD_1_14
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 222
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 21}
+        - {x: -21, y: 18}
+        - {x: -21, y: -14}
+        - {x: -12, y: -21}
+        - {x: 11, y: -21}
+        - {x: 21, y: -13}
+        - {x: 21, y: 19}
+        - {x: 15, y: 21}
+    - name: INGAME_BLOCKS_WOOD_1_15
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 223
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 20.5}
+        - {x: -19.5, y: -20.5}
+        - {x: 19.5, y: -20.5}
+        - {x: 19.5, y: 20.5}
+    - name: INGAME_BLOCKS_WOOD_1_16
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 223
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 21}
+        - {x: -21.5, y: -20}
+        - {x: -20.5, y: -21}
+        - {x: 21.5, y: -21}
+        - {x: 21.5, y: 21}
+    - name: INGAME_BLOCKS_WOOD_1_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 139
+        width: 85
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 42}
+        - {x: -42.5, y: -42}
+        - {x: 42.5, y: -42}
+        - {x: 42.5, y: 41}
+        - {x: 41.5, y: 42}
+    - name: INGAME_BLOCKS_WOOD_1_18
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 137
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 41.5}
+        - {x: -42, y: -19.5}
+        - {x: -42, y: -41.5}
+        - {x: 42, y: -41.5}
+        - {x: 42, y: -24.5}
+        - {x: 7, y: 41.5}
+    - name: INGAME_BLOCKS_WOOD_1_19
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 154
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 38}
+        - {x: -38, y: 33}
+        - {x: -38, y: -32}
+        - {x: -22, y: -38}
+        - {x: 34, y: -38}
+        - {x: 38, y: -33}
+        - {x: 38, y: 27}
+        - {x: 33, y: 38}
+    - name: INGAME_BLOCKS_WOOD_1_20
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 180
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 21}
+        - {x: -20.5, y: 18}
+        - {x: -20.5, y: -14}
+        - {x: -18.5, y: -21}
+        - {x: 14.5, y: -21}
+        - {x: 20.5, y: -19}
+        - {x: 20.5, y: 12}
+        - {x: 12.5, y: 21}
+    - name: INGAME_BLOCKS_WOOD_1_21
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 137
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 21.5}
+        - {x: -21, y: 18.5}
+        - {x: -21, y: -21.5}
+        - {x: 18, y: -21.5}
+        - {x: 21, y: -11.5}
+        - {x: 21, y: 13.5}
+        - {x: 15, y: 21.5}
+    - name: INGAME_BLOCKS_WOOD_1_22
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 200
+        width: 209
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_23
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 180
+        width: 206
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_24
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 155
+        width: 210
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_25
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 134
+        width: 209
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 112
+        width: 170
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_27
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 112
+        width: 44
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_28
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 76
+        width: 75
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 38.5}
+        - {x: -37.5, y: 32.5}
+        - {x: -37.5, y: -29.5}
+        - {x: -32.5, y: -38.5}
+        - {x: 25.5, y: -38.5}
+        - {x: 37.5, y: -36.5}
+        - {x: 37.5, y: 37.5}
+        - {x: 36.5, y: 38.5}
+    - name: INGAME_BLOCKS_WOOD_1_29
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 81
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.5, y: 38.5}
+        - {x: -27.5, y: 38.5}
+        - {x: -40.5, y: 24.5}
+        - {x: -40.5, y: -19.5}
+        - {x: -29.5, y: -38.5}
+        - {x: 25.5, y: -38.5}
+        - {x: 34.5, y: -28.5}
+        - {x: 37.5, y: -21.5}
+        - {x: 37.5, y: 26.5}
+    - name: INGAME_BLOCKS_WOOD_1_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 41}
+        - {x: -41.5, y: -41}
+        - {x: 41.5, y: -41}
+        - {x: 41.5, y: 41}
+    - name: INGAME_BLOCKS_WOOD_1_31
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 54
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 42}
+        - {x: -8, y: 42}
+        - {x: -42, y: -6}
+        - {x: -42, y: -42}
+        - {x: 40, y: -42}
+        - {x: 42, y: -40}
+        - {x: 42, y: -31}
+      - - {x: 39, y: 12}
+        - {x: 41, y: 10}
+        - {x: 42, y: 10}
+        - {x: 42, y: 29}
+        - {x: 39, y: 28}
+    - name: INGAME_BLOCKS_WOOD_1_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 10
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 20.5}
+        - {x: -20.5, y: -18.5}
+        - {x: -19.5, y: -20.5}
+        - {x: 20.5, y: -20.5}
+        - {x: 20.5, y: 20.5}
+    - name: INGAME_BLOCKS_WOOD_1_33
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 33
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_34
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 10
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_35
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 12
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 20.5}
+        - {x: -21, y: -20.5}
+        - {x: 21, y: -20.5}
+        - {x: 21, y: 19.5}
+        - {x: 20, y: 20.5}
+    - name: INGAME_BLOCKS_WOOD_1_36
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 33
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_37
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 10
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_38
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 113
+        width: 168
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_39
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 114
+        width: 43
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_40
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 92
+        width: 169
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_41
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 90
+        width: 43
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41638848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_42
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 69
+        width: 171
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_43
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 69
+        width: 43
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_44
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 46
+        width: 169
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_45
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 48
+        width: 43
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_46
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 25
+        width: 84
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_47
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 25
+        width: 85
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_48
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1
+        width: 84
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: INGAME_BLOCKS_WOOD_1_49
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 2
+        width: 87
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
