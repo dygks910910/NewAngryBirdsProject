@@ -44,4 +44,16 @@ $RECYCLE.BIN/
 .AppleDesktop
 Network Trash Folder
 Temporary Items
+Library
+Temp
+obj
+*.DotSettings
+*.csproj
+*.pidb
+*.sln
+*.suo
+*.unityproj
+*.user
+*.userprefs
+
 .apdisk

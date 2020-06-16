@@ -1,65 +1,162 @@
 fileFormatVersion: 2
 guid: be5aa71188e999440bef6d7b2c4d09fc
-timeCreated: 1465661077
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: INGAME_BLOCKS_GLASS_1502x390_0
-    21300002: INGAME_BLOCKS_GLASS_1502x390_1
-    21300004: INGAME_BLOCKS_GLASS_1502x390_2
-    21300006: INGAME_BLOCKS_GLASS_1502x390_3
-    21300008: INGAME_BLOCKS_GLASS_1502x390_4
-    21300010: INGAME_BLOCKS_GLASS_1502x390_5
-    21300012: INGAME_BLOCKS_GLASS_1502x390_6
-    21300014: INGAME_BLOCKS_GLASS_1502x390_7
-    21300016: INGAME_BLOCKS_GLASS_1502x390_8
-    21300018: INGAME_BLOCKS_GLASS_1502x390_9
-    21300020: INGAME_BLOCKS_GLASS_1502x390_10
-    21300022: INGAME_BLOCKS_GLASS_1502x390_11
-    21300024: INGAME_BLOCKS_GLASS_1502x390_12
-    21300026: INGAME_BLOCKS_GLASS_1502x390_13
-    21300028: INGAME_BLOCKS_GLASS_1502x390_14
-    21300030: INGAME_BLOCKS_GLASS_1502x390_15
-    21300032: INGAME_BLOCKS_GLASS_1502x390_16
-    21300034: INGAME_BLOCKS_GLASS_1502x390_17
-    21300036: INGAME_BLOCKS_GLASS_1502x390_18
-    21300038: INGAME_BLOCKS_GLASS_1502x390_19
-    21300040: INGAME_BLOCKS_GLASS_1502x390_20
-    21300042: INGAME_BLOCKS_GLASS_1502x390_21
-    21300044: INGAME_BLOCKS_GLASS_1502x390_22
-    21300046: INGAME_BLOCKS_GLASS_1502x390_23
-    21300048: INGAME_BLOCKS_GLASS_1502x390_24
-    21300050: INGAME_BLOCKS_GLASS_1502x390_25
-    21300052: INGAME_BLOCKS_GLASS_1502x390_26
-    21300054: INGAME_BLOCKS_GLASS_1502x390_27
-    21300056: INGAME_BLOCKS_GLASS_1502x390_28
-    21300058: INGAME_BLOCKS_GLASS_1502x390_29
-    21300060: INGAME_BLOCKS_GLASS_1502x390_30
-    21300062: INGAME_BLOCKS_GLASS_1502x390_31
-    21300064: INGAME_BLOCKS_GLASS_1502x390_32
-    21300066: INGAME_BLOCKS_GLASS_1502x390_33
-    21300068: INGAME_BLOCKS_GLASS_1502x390_34
-    21300070: INGAME_BLOCKS_GLASS_1502x390_35
-    21300072: INGAME_BLOCKS_GLASS_1502x390_36
-    21300074: INGAME_BLOCKS_GLASS_1502x390_37
-    21300076: INGAME_BLOCKS_GLASS_1502x390_38
-    21300078: INGAME_BLOCKS_GLASS_1502x390_39
-    21300080: INGAME_BLOCKS_GLASS_1502x390_40
-    21300082: INGAME_BLOCKS_GLASS_1502x390_41
-    21300084: INGAME_BLOCKS_GLASS_1502x390_42
-    21300086: INGAME_BLOCKS_GLASS_1502x390_43
-    21300088: INGAME_BLOCKS_GLASS_1502x390_44
-    21300090: INGAME_BLOCKS_GLASS_1502x390_45
-    21300092: INGAME_BLOCKS_GLASS_1502x390_46
-    21300094: INGAME_BLOCKS_GLASS_1502x390_47
-  serializedVersion: 2
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: INGAME_BLOCKS_GLASS_1502x390_0
+  - first:
+      213: 21300002
+    second: INGAME_BLOCKS_GLASS_1502x390_1
+  - first:
+      213: 21300004
+    second: INGAME_BLOCKS_GLASS_1502x390_2
+  - first:
+      213: 21300006
+    second: INGAME_BLOCKS_GLASS_1502x390_3
+  - first:
+      213: 21300008
+    second: INGAME_BLOCKS_GLASS_1502x390_4
+  - first:
+      213: 21300010
+    second: INGAME_BLOCKS_GLASS_1502x390_5
+  - first:
+      213: 21300012
+    second: INGAME_BLOCKS_GLASS_1502x390_6
+  - first:
+      213: 21300014
+    second: INGAME_BLOCKS_GLASS_1502x390_7
+  - first:
+      213: 21300016
+    second: INGAME_BLOCKS_GLASS_1502x390_8
+  - first:
+      213: 21300018
+    second: INGAME_BLOCKS_GLASS_1502x390_9
+  - first:
+      213: 21300020
+    second: INGAME_BLOCKS_GLASS_1502x390_10
+  - first:
+      213: 21300022
+    second: INGAME_BLOCKS_GLASS_1502x390_11
+  - first:
+      213: 21300024
+    second: INGAME_BLOCKS_GLASS_1502x390_12
+  - first:
+      213: 21300026
+    second: INGAME_BLOCKS_GLASS_1502x390_13
+  - first:
+      213: 21300028
+    second: INGAME_BLOCKS_GLASS_1502x390_14
+  - first:
+      213: 21300030
+    second: INGAME_BLOCKS_GLASS_1502x390_15
+  - first:
+      213: 21300032
+    second: INGAME_BLOCKS_GLASS_1502x390_16
+  - first:
+      213: 21300034
+    second: INGAME_BLOCKS_GLASS_1502x390_17
+  - first:
+      213: 21300036
+    second: INGAME_BLOCKS_GLASS_1502x390_18
+  - first:
+      213: 21300038
+    second: INGAME_BLOCKS_GLASS_1502x390_19
+  - first:
+      213: 21300040
+    second: INGAME_BLOCKS_GLASS_1502x390_20
+  - first:
+      213: 21300042
+    second: INGAME_BLOCKS_GLASS_1502x390_21
+  - first:
+      213: 21300044
+    second: INGAME_BLOCKS_GLASS_1502x390_22
+  - first:
+      213: 21300046
+    second: INGAME_BLOCKS_GLASS_1502x390_23
+  - first:
+      213: 21300048
+    second: INGAME_BLOCKS_GLASS_1502x390_24
+  - first:
+      213: 21300050
+    second: INGAME_BLOCKS_GLASS_1502x390_25
+  - first:
+      213: 21300052
+    second: INGAME_BLOCKS_GLASS_1502x390_26
+  - first:
+      213: 21300054
+    second: INGAME_BLOCKS_GLASS_1502x390_27
+  - first:
+      213: 21300056
+    second: INGAME_BLOCKS_GLASS_1502x390_28
+  - first:
+      213: 21300058
+    second: INGAME_BLOCKS_GLASS_1502x390_29
+  - first:
+      213: 21300060
+    second: INGAME_BLOCKS_GLASS_1502x390_30
+  - first:
+      213: 21300062
+    second: INGAME_BLOCKS_GLASS_1502x390_31
+  - first:
+      213: 21300064
+    second: INGAME_BLOCKS_GLASS_1502x390_32
+  - first:
+      213: 21300066
+    second: INGAME_BLOCKS_GLASS_1502x390_33
+  - first:
+      213: 21300068
+    second: INGAME_BLOCKS_GLASS_1502x390_34
+  - first:
+      213: 21300070
+    second: INGAME_BLOCKS_GLASS_1502x390_35
+  - first:
+      213: 21300072
+    second: INGAME_BLOCKS_GLASS_1502x390_36
+  - first:
+      213: 21300074
+    second: INGAME_BLOCKS_GLASS_1502x390_37
+  - first:
+      213: 21300076
+    second: INGAME_BLOCKS_GLASS_1502x390_38
+  - first:
+      213: 21300078
+    second: INGAME_BLOCKS_GLASS_1502x390_39
+  - first:
+      213: 21300080
+    second: INGAME_BLOCKS_GLASS_1502x390_40
+  - first:
+      213: 21300082
+    second: INGAME_BLOCKS_GLASS_1502x390_41
+  - first:
+      213: 21300084
+    second: INGAME_BLOCKS_GLASS_1502x390_42
+  - first:
+      213: 21300086
+    second: INGAME_BLOCKS_GLASS_1502x390_43
+  - first:
+      213: 21300088
+    second: INGAME_BLOCKS_GLASS_1502x390_44
+  - first:
+      213: 21300090
+    second: INGAME_BLOCKS_GLASS_1502x390_45
+  - first:
+      213: 21300092
+    second: INGAME_BLOCKS_GLASS_1502x390_46
+  - first:
+      213: 21300094
+    second: INGAME_BLOCKS_GLASS_1502x390_47
+  externalObjects: {}
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -68,37 +165,60 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
+    serializedVersion: 2
     filterMode: -1
     aniso: 16
-    mipBias: -1
-    wrapMode: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: INGAME_BLOCKS_GLASS_1502x390_0
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_0
       rect:
         serializedVersion: 2
         x: 0
@@ -108,13 +228,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42, y: 41.5}
-        - {x: -42, y: -41.5}
-        - {x: 40, y: -41.5}
-        - {x: 42, y: -40.5}
-        - {x: 42, y: 41.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_1
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_1
       rect:
         serializedVersion: 2
         x: 83
@@ -124,21 +249,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 41.5}
-        - {x: -37, y: -21.5}
-        - {x: -42, y: -31.5}
-        - {x: -42, y: -40.5}
-        - {x: -41, y: -41.5}
-        - {x: 42, y: -41.5}
-        - {x: 42, y: -23.5}
-        - {x: 7, y: 41.5}
-      - - {x: -42, y: -22.5}
-        - {x: -39, y: -21.5}
-        - {x: -39, y: 33.5}
-        - {x: -41, y: 35.5}
-        - {x: -42, y: 35.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_2
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_2
       rect:
         serializedVersion: 2
         x: 167
@@ -148,14 +270,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -41.5, y: 41}
-        - {x: -41.5, y: -41}
-        - {x: 40.5, y: -41}
-        - {x: 41.5, y: -40}
-        - {x: 41.5, y: -29}
-        - {x: -33.5, y: 41}
-    - name: INGAME_BLOCKS_GLASS_1502x390_3
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_3
       rect:
         serializedVersion: 2
         x: 250
@@ -165,13 +291,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -41, y: 41}
-        - {x: -41, y: -41}
-        - {x: 41, y: -41}
-        - {x: 41, y: -29}
-        - {x: -35, y: 41}
-    - name: INGAME_BLOCKS_GLASS_1502x390_4
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_4
       rect:
         serializedVersion: 2
         x: 332
@@ -181,13 +312,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -41, y: 41}
-        - {x: -41, y: -41}
-        - {x: 41, y: -41}
-        - {x: 41, y: -29}
-        - {x: -35, y: 41}
-    - name: INGAME_BLOCKS_GLASS_1502x390_5
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_5
       rect:
         serializedVersion: 2
         x: 413
@@ -197,14 +333,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42.5, y: -40.5}
-        - {x: 41.5, y: -40.5}
-        - {x: 41.5, y: -36.5}
-        - {x: -27.5, y: 40.5}
-        - {x: -40.5, y: 40.5}
-        - {x: -42.5, y: 38.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_6
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_6
       rect:
         serializedVersion: 2
         x: 0
@@ -214,12 +354,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42, y: 40.5}
-        - {x: -42, y: -40.5}
-        - {x: 42, y: -40.5}
-        - {x: 42, y: 40.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_7
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_7
       rect:
         serializedVersion: 2
         x: 83
@@ -229,20 +375,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6.5, y: 40.5}
-        - {x: -38.5, y: -20.5}
-        - {x: -43.5, y: -30.5}
-        - {x: -43.5, y: -40.5}
-        - {x: 43.5, y: -40.5}
-        - {x: 43.5, y: -28.5}
-        - {x: 6.5, y: 40.5}
-      - - {x: -43.5, y: -21.5}
-        - {x: -40.5, y: -20.5}
-        - {x: -40.5, y: 34.5}
-        - {x: -42.5, y: 36.5}
-        - {x: -43.5, y: 36.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_8
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_8
       rect:
         serializedVersion: 2
         x: 170
@@ -252,16 +396,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -30.5, y: 37.5}
-        - {x: -37.5, y: 20.5}
-        - {x: -37.5, y: -27.5}
-        - {x: -24.5, y: -37.5}
-        - {x: 22.5, y: -37.5}
-        - {x: 37.5, y: -33.5}
-        - {x: 37.5, y: 23.5}
-        - {x: 19.5, y: 37.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_9
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_9
       rect:
         serializedVersion: 2
         x: 244
@@ -271,15 +417,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -21.5, y: 21}
-        - {x: -21.5, y: -18}
-        - {x: -14.5, y: -21}
-        - {x: 16.5, y: -21}
-        - {x: 21.5, y: -18}
-        - {x: 21.5, y: 18}
-        - {x: 20.5, y: 21}
-    - name: INGAME_BLOCKS_GLASS_1502x390_10
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_10
       rect:
         serializedVersion: 2
         x: 289
@@ -289,16 +438,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: 22}
-        - {x: -20, y: 18}
-        - {x: -21, y: 16}
-        - {x: -21, y: -19}
-        - {x: -15, y: -22}
-        - {x: 18, y: -22}
-        - {x: 21, y: -18}
-        - {x: 21, y: 22}
-    - name: INGAME_BLOCKS_GLASS_1502x390_11
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_11
       rect:
         serializedVersion: 2
         x: 332
@@ -308,13 +459,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42.5, y: 21}
-        - {x: -42.5, y: -21}
-        - {x: 42.5, y: -21}
-        - {x: 42.5, y: 20}
-        - {x: 40.5, y: 21}
-    - name: INGAME_BLOCKS_GLASS_1502x390_12
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_12
       rect:
         serializedVersion: 2
         x: 416
@@ -324,14 +480,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42, y: 21}
-        - {x: -43, y: 19}
-        - {x: -43, y: -21}
-        - {x: 43, y: -21}
-        - {x: 43, y: 20}
-        - {x: 41, y: 21}
-    - name: INGAME_BLOCKS_GLASS_1502x390_13
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_13
       rect:
         serializedVersion: 2
         x: 459
@@ -341,13 +501,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -21.5, y: 20.5}
-        - {x: -21.5, y: -20.5}
-        - {x: 21.5, y: -20.5}
-        - {x: 21.5, y: 17.5}
-        - {x: 20.5, y: 20.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_14
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_14
       rect:
         serializedVersion: 2
         x: 415
@@ -357,13 +522,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -22, y: 22}
-        - {x: -22, y: -22}
-        - {x: 22, y: -22}
-        - {x: 22, y: 21}
-        - {x: 21, y: 22}
-    - name: INGAME_BLOCKS_GLASS_1502x390_15
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_15
       rect:
         serializedVersion: 2
         x: 330
@@ -373,12 +543,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42.5, y: 21}
-        - {x: -42.5, y: -21}
-        - {x: 42.5, y: -21}
-        - {x: 42.5, y: 21}
-    - name: INGAME_BLOCKS_GLASS_1502x390_16
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_16
       rect:
         serializedVersion: 2
         x: 243
@@ -388,13 +564,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -43, y: 20}
-        - {x: -43, y: -18}
-        - {x: -41, y: -20}
-        - {x: 43, y: -20}
-        - {x: 43, y: 20}
-    - name: INGAME_BLOCKS_GLASS_1502x390_17
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_17
       rect:
         serializedVersion: 2
         x: 0
@@ -404,12 +585,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42, y: 40.5}
-        - {x: -42, y: -40.5}
-        - {x: 42, y: -40.5}
-        - {x: 42, y: 40.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_18
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_18
       rect:
         serializedVersion: 2
         x: 84
@@ -419,20 +606,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4.5, y: 41}
-        - {x: -8.5, y: 41}
-        - {x: -41.5, y: -20}
-        - {x: -43.5, y: -27}
-        - {x: -43.5, y: -41}
-        - {x: 42.5, y: -41}
-        - {x: 42.5, y: -30}
-      - - {x: 40.5, y: 8}
-        - {x: 42.5, y: 6}
-        - {x: 43.5, y: 6}
-        - {x: 43.5, y: 25}
-        - {x: 40.5, y: 24}
-    - name: INGAME_BLOCKS_GLASS_1502x390_19
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_19
       rect:
         serializedVersion: 2
         x: 172
@@ -442,16 +627,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -27.5, y: 37.5}
-        - {x: -35.5, y: 29.5}
-        - {x: -35.5, y: -32.5}
-        - {x: -26.5, y: -37.5}
-        - {x: 17.5, y: -37.5}
-        - {x: 35.5, y: -30.5}
-        - {x: 35.5, y: 30.5}
-        - {x: 21.5, y: 37.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_20
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_20
       rect:
         serializedVersion: 2
         x: 244
@@ -461,12 +648,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -21.5, y: 21}
-        - {x: -21.5, y: -21}
-        - {x: 21.5, y: -21}
-        - {x: 21.5, y: 21}
-    - name: INGAME_BLOCKS_GLASS_1502x390_21
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_21
       rect:
         serializedVersion: 2
         x: 289
@@ -477,7 +670,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_22
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_22
       rect:
         serializedVersion: 2
         x: 288
@@ -488,7 +691,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_23
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_23
       rect:
         serializedVersion: 2
         x: 288
@@ -499,7 +712,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_24
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_24
       rect:
         serializedVersion: 2
         x: 288
@@ -510,7 +733,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_25
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_25
       rect:
         serializedVersion: 2
         x: 0
@@ -520,13 +753,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -41, y: 42}
-        - {x: -42, y: 40}
-        - {x: -42, y: -42}
-        - {x: 42, y: -42}
-        - {x: 42, y: 42}
-    - name: INGAME_BLOCKS_GLASS_1502x390_26
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_26
       rect:
         serializedVersion: 2
         x: 84
@@ -536,15 +774,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8.5, y: 42.5}
-        - {x: -42.5, y: -20.5}
-        - {x: -42.5, y: -41.5}
-        - {x: -41.5, y: -42.5}
-        - {x: 42.5, y: -42.5}
-        - {x: 42.5, y: -25.5}
-        - {x: 13.5, y: 42.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_27
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_27
       rect:
         serializedVersion: 2
         x: 169
@@ -554,17 +795,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -24, y: 37}
-        - {x: -33, y: 36}
-        - {x: -37, y: 26}
-        - {x: -37, y: -25}
-        - {x: -20, y: -37}
-        - {x: 31, y: -37}
-        - {x: 37, y: -36}
-        - {x: 37, y: 35}
-        - {x: 30, y: 37}
-    - name: INGAME_BLOCKS_GLASS_1502x390_28
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_28
       rect:
         serializedVersion: 2
         x: 244
@@ -574,13 +816,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 22}
-        - {x: -22, y: 21}
-        - {x: -22, y: -22}
-        - {x: 22, y: -22}
-        - {x: 22, y: 22}
-    - name: INGAME_BLOCKS_GLASS_1502x390_29
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_29
       rect:
         serializedVersion: 2
         x: 245
@@ -591,7 +838,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_30
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_30
       rect:
         serializedVersion: 2
         x: 245
@@ -602,7 +859,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_31
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_31
       rect:
         serializedVersion: 2
         x: 245
@@ -613,7 +880,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_32
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_32
       rect:
         serializedVersion: 2
         x: 243
@@ -624,7 +901,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_33
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_33
       rect:
         serializedVersion: 2
         x: 288
@@ -635,7 +922,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_34
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_34
       rect:
         serializedVersion: 2
         x: 288
@@ -646,7 +943,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_35
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_35
       rect:
         serializedVersion: 2
         x: 287
@@ -657,7 +964,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_36
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_36
       rect:
         serializedVersion: 2
         x: 287
@@ -668,7 +985,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_37
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_37
       rect:
         serializedVersion: 2
         x: 287
@@ -679,7 +1006,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_38
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6305410000000000800000000000000
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_38
       rect:
         serializedVersion: 2
         x: 372
@@ -690,7 +1027,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_39
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6305410000000000800000000000000
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_39
       rect:
         serializedVersion: 2
         x: 288
@@ -701,7 +1048,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_40
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6305410000000000800000000000000
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_40
       rect:
         serializedVersion: 2
         x: 371
@@ -712,7 +1069,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_41
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07305410000000000800000000000000
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_41
       rect:
         serializedVersion: 2
         x: 46
@@ -723,7 +1090,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_42
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27305410000000000800000000000000
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_42
       rect:
         serializedVersion: 2
         x: 47
@@ -734,7 +1111,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_43
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47305410000000000800000000000000
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_43
       rect:
         serializedVersion: 2
         x: 0
@@ -744,14 +1131,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 22.5, y: 21.5}
-        - {x: -22.5, y: 21.5}
-        - {x: -22.5, y: -19.5}
-        - {x: -16.5, y: -21.5}
-        - {x: 17.5, y: -21.5}
-        - {x: 22.5, y: -16.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_44
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67305410000000000800000000000000
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_44
       rect:
         serializedVersion: 2
         x: 84
@@ -761,14 +1152,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -13, y: 22.5}
-        - {x: -22, y: 13.5}
-        - {x: -22, y: -20.5}
-        - {x: -14, y: -22.5}
-        - {x: 22, y: -22.5}
-        - {x: 22, y: 22.5}
-    - name: INGAME_BLOCKS_GLASS_1502x390_45
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87305410000000000800000000000000
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_45
       rect:
         serializedVersion: 2
         x: 128
@@ -779,7 +1174,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_46
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7305410000000000800000000000000
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_46
       rect:
         serializedVersion: 2
         x: 127
@@ -790,7 +1195,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: INGAME_BLOCKS_GLASS_1502x390_47
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7305410000000000800000000000000
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_GLASS_1502x390_47
       rect:
         serializedVersion: 2
         x: 168
@@ -800,17 +1215,29 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 24.5, y: 38}
-        - {x: -16.5, y: 38}
-        - {x: -37.5, y: 29}
-        - {x: -37.5, y: -22}
-        - {x: -19.5, y: -38}
-        - {x: 22.5, y: -38}
-        - {x: 37.5, y: -20}
-        - {x: 37.5, y: 27}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7305410000000000800000000000000
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
