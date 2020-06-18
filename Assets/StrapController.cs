@@ -36,7 +36,6 @@ namespace YH_Class
         LineRenderer InnerLine;
         LineRenderer OuterLine;
 
-        bool isSettedBird =false;
         void Start()
         {
 
@@ -65,7 +64,8 @@ namespace YH_Class
             OuterLine.SetPosition(1, PosForDrawLine);
 
             ReloadBirds(bird);
-          
+
+            YH_SingleTon.YH_ObjectPool.Instance.LoadAllPrefabs();
         }
 
         // Update is called once per frame
@@ -78,21 +78,25 @@ namespace YH_Class
             {
                 ShotingBird();
             }
+            //bird.transform.forward  = Vector3.Normalize(BetweenStrapCenter - MousePosition);
 
 
 
         }
         private void MouseInput()
         {
-            MouseClick();
-            MouseDrag();
-            MouseButtonUp();
+            if(bird != null)
+            {
+                MouseClick();
+                MouseDrag();
+                MouseButtonUp();
+            }
+           
         }
         public void ReloadBirds(GameObject obj)
         {
             obj.transform.position = BetweenStrapCenter;
             obj.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-            isSettedBird = true;
         }
         private void CreateStrap(ref LineRenderer line,float width,UnityEngine.Color color)
         {
@@ -111,16 +115,25 @@ namespace YH_Class
         {
             if (StartDrag && Input.GetMouseButton(0))
             {
-
+                bool isCW = false;
                 // 마우스 왼쪽 버튼을 누르고 있는 도중의 처리
                 MousePosition = Input.mousePosition;
                 MousePosition = CvtCamera.ScreenToWorldPoint(MousePosition);
+                Vector2 direction = Vector3.Normalize(MousePosition - BetweenStrapCenter);
+                if (Vector3.Cross(new Vector3(0, 1, 0), direction).z < 0)
+                {
+                    isCW = false;
+                    return;
+                }
+                else
+                    isCW = true;
+                float cosTheta = Vector2.Dot(direction, new Vector2(0, 1));
 
                 Vector2 NewMousePosition = MousePosition;
                 if ((NewMousePosition - BetweenStrapCenter).magnitude > StrapMaxLength)
                 {
-                    Vector2 mouseDirection = Vector3.Normalize(MousePosition - BetweenStrapCenter);
-                    NewMousePosition = BetweenStrapCenter + mouseDirection * StrapMaxLength;
+                    //Vector2 mouseDirection = Vector3.Normalize(MousePosition - BetweenStrapCenter);
+                    NewMousePosition = BetweenStrapCenter + direction * StrapMaxLength;
                     MousePosition = NewMousePosition;
                 }
 
@@ -134,7 +147,8 @@ namespace YH_Class
 
                 bird.transform.position = PosForDrawLine;
 
-                bird.transform.localRotation.SetFromToRotation(NewMousePosition, BetweenStrapCenter);
+                //bird의 진행방향에 따라 회전.y축정렬을 -90하여 x축으로 바꿔줌.
+                bird.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Acos(cosTheta)*Mathf.Rad2Deg - 90);
                 //lr.SetPosition(2, OuterPos);
             }
         }
@@ -170,30 +184,37 @@ namespace YH_Class
                     ShotingMousePosition = MousePosition;
                     Shoting = true;
 
-                    //슈팅 방향 설정.
-                    Vector2 shotingDir = Vector3.Normalize(BetweenStrapCenter - ShotingMousePosition);
-                    //슈팅 파워 설정.
-                    // (strapMaxLength / length) * MaxForce;
-                    float strapLength = (BetweenStrapCenter - ShotingMousePosition).magnitude;
-                    float fForce = (strapLength / StrapMaxLength) * StrapMaxPower;
-
-                    //bird세팅.
-                    Rigidbody2D rgidBdy = bird.GetComponent<Rigidbody2D>();
-                    rgidBdy.bodyType = RigidbodyType2D.Dynamic;
-                    rgidBdy.AddForce(shotingDir * fForce,ForceMode2D.Impulse);
+                    StartCoroutine(StrapReturn());
+                   
                 }
                 // 마우스 왼쪽 버튼을 뗄 때의 처리
             }
         }
         
       
-        private float fLinearVal = 0;
         private void ShotingBird()
         {
-            if(isSettedBird)
+            //슈팅 방향 설정.
+            Vector2 shotingDir = (BetweenStrapCenter - ShotingMousePosition).normalized ;
+            //슈팅 파워 설정.
+            // (strapMaxLength / length) * MaxForce;
+            float strapLength = (BetweenStrapCenter - ShotingMousePosition).magnitude;
+            float fForce = (strapLength / StrapMaxLength) * StrapMaxPower;
+
+            //bird세팅.
+            Rigidbody2D rgidBdy = bird.GetComponent<Rigidbody2D>();
+            rgidBdy.bodyType = RigidbodyType2D.Dynamic;
+            rgidBdy.AddForce(shotingDir * fForce, ForceMode2D.Impulse);
+            Shoting = false;
+            bird = null;
+        }
+
+        IEnumerator StrapReturn()
+        {
+            for(float f = 0; f <= 1;)
             {
-                fLinearVal += StrapMaxPower * Time.deltaTime;
-                Vector2 lerped = Vector2.Lerp(ShotingMousePosition, BetweenStrapCenter, fLinearVal);
+                f += StrapMaxPower * Time.deltaTime;
+                Vector2 lerped = Vector2.Lerp(ShotingMousePosition, BetweenStrapCenter, f);
 
                 Vector3 PosForDrawLine = lerped;
                 PosForDrawLine.z = -1;
@@ -202,11 +223,12 @@ namespace YH_Class
 
                 OuterLine.SetPosition(0, OuterPos);
                 OuterLine.SetPosition(1, PosForDrawLine);
-                if (fLinearVal >= 1)
+                if (f >= 1)
                 {
                     Shoting = false;
-                    fLinearVal = 0;
+                    break;
                 }
+                yield return null;
             }
            
         }
