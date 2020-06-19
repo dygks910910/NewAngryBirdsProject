@@ -96,7 +96,7 @@ namespace YH_Class
         public void ReloadBirds(GameObject obj)
         {
             obj.transform.position = BetweenStrapCenter;
-            obj.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            obj.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         }
         private void CreateStrap(ref LineRenderer line,float width,UnityEngine.Color color)
         {
@@ -115,18 +115,15 @@ namespace YH_Class
         {
             if (StartDrag && Input.GetMouseButton(0))
             {
-                bool isCW = false;
                 // 마우스 왼쪽 버튼을 누르고 있는 도중의 처리
                 MousePosition = Input.mousePosition;
                 MousePosition = CvtCamera.ScreenToWorldPoint(MousePosition);
                 Vector2 direction = Vector3.Normalize(MousePosition - BetweenStrapCenter);
                 if (Vector3.Cross(new Vector3(0, 1, 0), direction).z < 0)
                 {
-                    isCW = false;
+                    //반대쪽 각도로 드래그 허용 안함.
                     return;
                 }
-                else
-                    isCW = true;
                 float cosTheta = Vector2.Dot(direction, new Vector2(0, 1));
 
                 Vector2 NewMousePosition = MousePosition;
@@ -202,7 +199,7 @@ namespace YH_Class
             float fForce = (strapLength / StrapMaxLength) * StrapMaxPower;
 
             //bird세팅.
-            Rigidbody2D rgidBdy = bird.GetComponent<Rigidbody2D>();
+            Rigidbody2D rgidBdy = bird.GetComponentInChildren<Rigidbody2D>();
             rgidBdy.bodyType = RigidbodyType2D.Dynamic;
             rgidBdy.AddForce(shotingDir * fForce, ForceMode2D.Impulse);
             Shoting = false;
