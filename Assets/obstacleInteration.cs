@@ -32,7 +32,7 @@ public class obstacleInteration : MonoBehaviour
         if(idx != -1)
         {
             Debug.Log("changeSprite");
-            spriteRenderer.sprite = sprites[idx %3];
+            spriteRenderer.sprite = sprites[idx];
         }
         if (hp < 0)
             DestoryObject();
@@ -60,7 +60,7 @@ public class obstacleInteration : MonoBehaviour
     }
     private int GetSpriteIdxByHp()
     {
-        for (int i = MAX_SPRITE_COUNT-1; i >= 0; --i)
+        for (int i = 0; i < MAX_SPRITE_COUNT-1; ++i)
         {
             if (hpDevisionStage[i] >= hp)
             {

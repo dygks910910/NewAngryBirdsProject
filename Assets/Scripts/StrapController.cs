@@ -56,12 +56,8 @@ namespace YH_Class
             OuterLine.alignment = LineAlignment.TransformZ;
 
             Vector3 PosForDrawLine = BetweenStrapCenter;
-            PosForDrawLine.z = -1;
-            InnerLine.SetPosition(0, InnerPos);
-            InnerLine.SetPosition(1, PosForDrawLine);
 
-            OuterLine.SetPosition(0, OuterPos);
-            OuterLine.SetPosition(1, PosForDrawLine);
+            SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
 
             ReloadBirds(bird);
 
@@ -135,15 +131,9 @@ namespace YH_Class
                 }
 
                 Vector3 PosForDrawLine = NewMousePosition;
-                PosForDrawLine.z = -1;
-                InnerLine.SetPosition(0, InnerPos);
-                InnerLine.SetPosition(1, PosForDrawLine);
 
-                OuterLine.SetPosition(0, OuterPos);
-                OuterLine.SetPosition(1, PosForDrawLine);
-
+                SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
                 bird.transform.position = PosForDrawLine;
-
                 //bird의 진행방향에 따라 회전.y축정렬을 -90하여 x축으로 바꿔줌.
                 bird.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Acos(cosTheta)*Mathf.Rad2Deg - 90);
                 //lr.SetPosition(2, OuterPos);
@@ -205,7 +195,16 @@ namespace YH_Class
             Shoting = false;
             bird = null;
         }
+        private void SetStrapLine(Vector2 inner,Vector2 outer,Vector3 stretchDest)
+        {
+            stretchDest.z = -1;
+            InnerLine.SetPosition(0, inner);
+            InnerLine.SetPosition(1, stretchDest);
 
+            stretchDest.z = -2;
+            OuterLine.SetPosition(0, outer);
+            OuterLine.SetPosition(1, stretchDest);
+        }
         IEnumerator StrapReturn()
         {
             for(float f = 0; f <= 1;)
@@ -214,12 +213,7 @@ namespace YH_Class
                 Vector2 lerped = Vector2.Lerp(ShotingMousePosition, BetweenStrapCenter, f);
 
                 Vector3 PosForDrawLine = lerped;
-                PosForDrawLine.z = -1;
-                InnerLine.SetPosition(0, InnerPos);
-                InnerLine.SetPosition(1, PosForDrawLine);
-
-                OuterLine.SetPosition(0, OuterPos);
-                OuterLine.SetPosition(1, PosForDrawLine);
+                SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
                 if (f >= 1)
                 {
                     Shoting = false;

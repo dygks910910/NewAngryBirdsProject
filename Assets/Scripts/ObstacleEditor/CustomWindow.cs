@@ -17,24 +17,24 @@ namespace YH_CustomEditor
         Sprite sprite3;
         Sprite sprite4;
         bool isUsingRigidBody           =true;
-        bool isUsingCircleCollider      =true;
-        bool isUsingAnimator            =true;
-        bool IsUsingBirdCollider        =true;
-        bool IsUsingBirdAnimatioChanger =true;
-        bool IsUsingAutoDestroyBird     =true;
-        bool isUsingBoxCollider = true;
+        //bool isUsingCircleCollider      =true;
+        //bool isUsingAnimator            =true;
+        //bool IsUsingBirdCollider        =true;
+        //bool IsUsingBirdAnimatioChanger =true;
+        //bool IsUsingAutoDestroyBird     =true;
         bool isUsingObstacleInterationScripts = true;
 
         int tagIdx = 0;
         int sortingLayerIdx = 0;
-
-
+        enum eColliderType { BOX,POLYGON,SPHERE};
+        private string[] colliderOptions = new string[] { "Box", "Polygon","Circle" };
+        int colliderSelected = 0;
         [MenuItem("YH_Custom/CreateObstacleWindow")]
         static void CreateWindow()
         {
             CustomWindow wnd = EditorWindow.CreateWindow<CustomWindow>();
             wnd.Show();
-            wnd.title = "CreateObstacleWindow";
+            wnd.titleContent = new GUIContent("CreateObstacleWindow");
         }
         private void OnGUI()
         {
@@ -42,23 +42,22 @@ namespace YH_CustomEditor
             GUILayout.Space(10);
             CustomWndHelper.CreateGameObjectField("값을 참조할 기본 Gameobject",ref referenceObject);
             //CustomWndHelper.CreateLabel("a", "b");
-            CustomWndHelper.CreateSpriteField("Hp에따른Sprite1",ref sprite1);
-            CustomWndHelper.CreateSpriteField("Hp에따른Sprite2", ref sprite2);
-            CustomWndHelper.CreateSpriteField("Hp에따른Sprite3", ref sprite3);
-            CustomWndHelper.CreateSpriteField("Hp에따른Sprite4", ref sprite4);
+            
+            CustomWndHelper.CreateSpriteField("HPLow",ref sprite1);
+            CustomWndHelper.CreateSpriteField("HPMidle", ref sprite2);
+            CustomWndHelper.CreateSpriteField("HPMidleBig", ref sprite3);
+            CustomWndHelper.CreateSpriteField("HPBig", ref sprite4);
             //체크박스
             GUILayout.Space(10);
             GUILayout.Label("추가할 Component들");
             CustomWndHelper.CreateTextToggle("RigidBody", ref isUsingRigidBody);
-            //CustomWndHelper.CreateTextToggle("CircleCollider", ref isUsingCircleCollider);
-            //CustomWndHelper.CreateTextToggle("Animator", ref isUsingAnimator);
-            //CustomWndHelper.CreateTextToggle("BirdCollider", ref IsUsingBirdCollider);
-            //CustomWndHelper.CreateTextToggle("BirdAnimationChanger", ref IsUsingBirdAnimatioChanger);
-            //CustomWndHelper.CreateTextToggle("autoDestoryBird", ref IsUsingAutoDestroyBird);
-            CustomWndHelper.CreateTextToggle("BoxCollider", ref isUsingBoxCollider);
+
+            colliderSelected = GUILayout.SelectionGrid(colliderSelected,
+                colliderOptions, colliderOptions.Length, EditorStyles.radioButton);
+
             CustomWndHelper.CreateTextToggle("Obstacle Scripts", ref isUsingObstacleInterationScripts);
 
-
+            GUILayout.Space(10);
             GUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("tags");
             tagIdx = EditorGUILayout.Popup(tagIdx, UnityEditorInternal.InternalEditorUtility.tags);
@@ -70,31 +69,49 @@ namespace YH_CustomEditor
             GUILayout.EndHorizontal();
             if (GUILayout.Button("CreateObstacle"))
             {
+                if (!(sprite1 && sprite2 && sprite3 && sprite4 && referenceObject))
+                {
+                    PopupWindow.Init("모든값을 설정해주세요.", "확인");
+                    return;
+                }
                 CreateObstacleObject();
             }
 
 
         }
-
+        private void OnEnable()
+        {
+            
+        }
         private void CreateObstacleObject()
         {
-            GameObject tmp = new GameObject("Obstacle");
-            tmp.tag = UnityEditorInternal.InternalEditorUtility.tags[tagIdx];
-            SpriteRenderer tmpSpriteRenderer = tmp.AddComponent<SpriteRenderer>();
-            tmpSpriteRenderer.sprite = sprite1;
+            GameObject tmpGameobj = new GameObject("Obstacle");
+            tmpGameobj.tag = UnityEditorInternal.InternalEditorUtility.tags[tagIdx];
+            SpriteRenderer tmpSpriteRenderer = tmpGameobj.AddComponent<SpriteRenderer>();
+            tmpSpriteRenderer.sprite = sprite4;
             tmpSpriteRenderer.sortingLayerName = YH_Helper.YH_Helper.GetSortingLayerNames()[sortingLayerIdx];
             if (isUsingRigidBody)
             {
-               Rigidbody2D rgd2D = tmp.AddComponent<Rigidbody2D>();
+               Rigidbody2D rgd2D = tmpGameobj.AddComponent<Rigidbody2D>();
                 rgd2D = referenceObject.GetComponent<Rigidbody2D>();
             }
-            if (isUsingBoxCollider)
+            switch ((eColliderType)colliderSelected)
             {
-                BoxCollider2D boxColl = tmp.AddComponent<BoxCollider2D>();
+                case eColliderType.BOX:
+                    tmpGameobj.AddComponent<BoxCollider2D>();
+                    break;
+                case eColliderType.POLYGON:
+                    tmpGameobj.AddComponent<PolygonCollider2D>();
+                    break;
+                case eColliderType.SPHERE:
+                    tmpGameobj.AddComponent<CircleCollider2D>();
+                    break;
+
             }
+
             if (isUsingObstacleInterationScripts)
             {
-                obstacleInteration interation = tmp.AddComponent<obstacleInteration>();
+                obstacleInteration interation = tmpGameobj.AddComponent<obstacleInteration>();
                 interation.sprites = new Sprite[4];
                 interation.sprites[0] = sprite1;
                 interation.sprites[1] = sprite2;
