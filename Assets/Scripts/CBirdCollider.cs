@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CBirdCollider : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        YH_Effects.Effects.CreateBirdCollisionEffect(gameObject.transform.position);
+        GameObject effect =  YH_SingleTon.YH_ObjectPool.Instance.GetObj("ColisionEffectBird");
+        effect.transform.position = gameObject.transform.position;
+        effect.GetComponent<ControlParticlesInChild>().PlayParticle();
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
+using System.Text;
 using UnityEngine;
-
+using UnityEngine.Assertions.Must;
 
 namespace YH_SingleTon
 {
@@ -54,15 +56,62 @@ namespace YH_SingleTon
     }
     class YH_ObjectPool : Singleton<YH_ObjectPool>
     {
-        public Dictionary<string, GameObject> ObjectDic = new Dictionary<string, GameObject>();
+        public Dictionary<string, Queue<GameObject>> ObjectDic = new Dictionary<string, Queue<GameObject>>();
+        //10개 미리 생성.
+        private const uint MAX_THREASHHOLD = 10;
+        //큐가 비어있을떄 새로 생성할 갯수.
+        private const uint MIN_THREASHHOLD = 5;
+        GameObject baseObject;
         public void LoadAllPrefabs()
         {
-            ObjectDic = Resources.LoadAll("Prefabs").ToDictionary(data => data.name, data=> data as GameObject);
+            baseObject = new GameObject("ObjectPool");
+            //ObjectDic = Resources.LoadAll("Prefabs").ToDictionary(data => data.name, data=> data as GameObject);
+            GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs");
+            FillQueue(prefabs, MAX_THREASHHOLD);
         }
 
-        public GameObject GetPrefab(string name)
+        //실패시 null 리턴.
+        public GameObject GetObj(string name)
         {
-            return ObjectDic[name] ? ObjectDic[name] : null;
+            if(ObjectDic[name].Count > 1)
+            {
+                GameObject obj = ObjectDic[name].Dequeue();
+                obj.SetActive(true);
+                return obj;
+            }
+            else if(ObjectDic[name].Count == 1)
+            {
+                for(int i =0; i < MIN_THREASHHOLD; ++i)
+                {
+                    ObjectDic[name].Enqueue(Instantiate(ObjectDic[name].Peek()));
+                }
+                return GetObj(name);
+            }
+            return null;
+        }
+        public void GiveBackObj(GameObject obj)
+        {
+            obj.SetActive(false);
+            obj.transform.parent = baseObject.transform;
+            ObjectDic[obj.name].Enqueue(obj);
+        }
+        private void FillQueue(GameObject[] objs,uint fillCount)
+        {
+            GameObject tmpObj;
+            for (int i = 0; i < objs.Length; ++i)
+            {
+                ObjectDic.Add(objs[i].name, new Queue<GameObject>());
+                for (int genCount = 0; genCount < MAX_THREASHHOLD; ++genCount)
+                {
+                    tmpObj = Instantiate(objs[i]);
+                    tmpObj.SetActive(false);
+                    tmpObj.transform.parent = baseObject.transform;
+                    //(Clone)제거
+                    tmpObj.name = objs[i].name;
+                    ObjectDic[objs[i].name].Enqueue(tmpObj);
+                }
+
+            }
         }
     }
 

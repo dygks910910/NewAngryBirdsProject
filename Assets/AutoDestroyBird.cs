@@ -19,9 +19,16 @@ namespace YH_Class
         {
            if(YH_Helper.YH_Helper.CheckAnimStateIsDestory(anim))
             {
-                Destroy(gameObject);
-                Destroy(pivotObj);
-                YH_Effects.Effects.CreateWhiteDust(gameObject.transform.position);
+                YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(pivotObj);
+                //Destroy(gameObject);
+                //Destroy(pivotObj);
+                //YH_Effects.Effects.CreateWhiteDust(gameObject.transform.position);
+                GameObject dust = YH_SingleTon.YH_ObjectPool.Instance.GetObj("WhiteDustInDestory");
+                dust.SetActive(true);
+                dust.transform.position = gameObject.transform.position;
+                //dust.transform.parent = gameObject.transform;
+                dust.GetComponent<ParticleSystem>().Play();
+                //dust.
             }    
         }
     }

@@ -1,13 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO.IsolatedStorage;
-using UnityEditor.SceneManagement;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.Experimental.GlobalIllumination;
-using UnityEngine.Rendering;
+
 
 namespace YH_Class
 {

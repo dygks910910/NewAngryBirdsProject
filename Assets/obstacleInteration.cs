@@ -9,12 +9,15 @@ public class obstacleInteration : MonoBehaviour
     public int hp = 50;
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    public GameObject destoryEffect = null;
 
     [SerializeField]
     private int[] hpDevisionStage = new int[MAX_SPRITE_COUNT];
 
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         //단계별로 보여줄 HP계산.
@@ -71,8 +74,19 @@ public class obstacleInteration : MonoBehaviour
     }
     private void DestoryObject()
     {
-        Destroy(gameObject);
-        YH_Effects.Effects.CreateWhiteDust(gameObject.transform.position);
+        //if (gameObject.CompareTag("WoodObstacle"))
+        //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
+        //else if (gameObject.CompareTag("IceObstacle"))
+        //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
+        //else if (gameObject.CompareTag("StoneObstacle"))
+        //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
+        //Destroy(gameObject);
+        GameObject tmpObj;
+        tmpObj = YH_SingleTon.YH_ObjectPool.Instance.GetObj(destoryEffect.name);
+        tmpObj.transform.position = gameObject.transform.position;
+        tmpObj.GetComponent<ParticleSystem>().Play();
+        YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(gameObject);
+
     }
 
 }
