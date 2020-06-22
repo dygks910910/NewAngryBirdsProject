@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 namespace YH_Class
@@ -7,29 +8,30 @@ namespace YH_Class
     public class AutoDestroyBird : MonoBehaviour
     {
         public GameObject pivotObj;
-        Animator anim;
+        public GameObject WorldRect;
+        private WaitForSeconds  waitSec = new WaitForSeconds(1);
+        private Animator anim;
+        private WorldArea worldAreaScripts;
+        private Vector2 tmpVec;
         // Start is called before the first frame update
         void Start()
         {
             anim = GetComponent<Animator>();
-        }
+            worldAreaScripts = WorldRect.GetComponent<WorldArea>();
+            StartCoroutine(CheckBirdDeadState());
 
-        // Update is called once per frame
-        void Update()
+        }
+        private IEnumerator CheckBirdDeadState()
         {
-           if(YH_Helper.YH_Helper.CheckAnimStateIsDestory(anim))
+            while(gameObject.activeSelf)
             {
-                YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(pivotObj);
-                //Destroy(gameObject);
-                //Destroy(pivotObj);
-                //YH_Effects.Effects.CreateWhiteDust(gameObject.transform.position);
-                GameObject dust = YH_SingleTon.YH_ObjectPool.Instance.GetObj("WhiteDustInDestory");
-                dust.SetActive(true);
-                dust.transform.position = gameObject.transform.position;
-                //dust.transform.parent = gameObject.transform;
-                dust.GetComponent<ParticleSystem>().Play();
-                //dust.
-            }    
+                if (YH_Helper.YH_Helper.CheckAnimStateIsDestory(anim))
+                {
+                    YH_Helper.YH_Helper.BirdDieProcessing(pivotObj, gameObject);
+                    break;
+                }
+                yield return waitSec;
+            }
         }
     }
 

@@ -66,7 +66,7 @@ namespace YH_SingleTon
         {
             baseObject = new GameObject("ObjectPool");
             //ObjectDic = Resources.LoadAll("Prefabs").ToDictionary(data => data.name, data=> data as GameObject);
-            GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs");
+            GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/CachingPrefabs");
             FillQueue(prefabs, MAX_THREASHHOLD);
         }
 
