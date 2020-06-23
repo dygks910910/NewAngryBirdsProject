@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class AutoReturnParticleObjPool : MonoBehaviour
 {
-    ParticleSystem particle;
-    // Start is called before the first frame update
-    void Start()
+    //ParticleSystem particle;
+    //// Start is called before the first frame update
+
+    //private void Awake()
+    //{
+    //    if(particle == null)
+    //        particle = GetComponent<ParticleSystem>();
+    //}
+    // Update is called once per frame
+    private void OnParticleSystemStopped()
     {
-        particle = GetComponent<ParticleSystem>();
+       YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(!particle.IsAlive())
-        {
-            YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(gameObject);
-        }
-    }
 }

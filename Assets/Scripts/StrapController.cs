@@ -54,7 +54,6 @@ namespace YH_Class
 
             ReloadBirds(bird);
 
-            YH_SingleTon.YH_ObjectPool.Instance.LoadAllPrefabs();
         }
 
         // Update is called once per frame
@@ -189,7 +188,6 @@ namespace YH_Class
             bird.GetComponentInChildren<BirdAnimationChanger>().birdState = eBirdState.FLY;
             Shoting = false;
             bird = null;
-            
         }
         private void SetStrapLine(Vector2 inner,Vector2 outer,Vector3 stretchDest)
         {

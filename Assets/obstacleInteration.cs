@@ -14,7 +14,7 @@ public class obstacleInteration : MonoBehaviour
 
     [SerializeField]
     private int[] hpDevisionStage = new int[MAX_SPRITE_COUNT];
-
+    int preIdx = -1;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,10 +32,11 @@ public class obstacleInteration : MonoBehaviour
     void Update()
     {
         int idx = GetSpriteIdxByHp();
-        if(idx != -1)
+        if(idx != -1 && preIdx != idx)
         {
             Debug.Log("changeSprite");
             spriteRenderer.sprite = sprites[idx];
+            preIdx = idx;
         }
         if (hp < 0)
             DestoryObject();

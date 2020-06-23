@@ -8,7 +8,7 @@ public class CBirdCollider : MonoBehaviour
     private GameObject birdCollisionEffect;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.otherCollider.name);
+        //Debug.Log(collision.otherCollider.name);
         GameObject effect =  YH_SingleTon.YH_ObjectPool.Instance.GetObj(birdCollisionEffect.name);
         effect.transform.position = gameObject.transform.position;
         effect.GetComponent<ControlParticlesInChild>().PlayParticle();

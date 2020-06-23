@@ -76,7 +76,9 @@ namespace YH_SingleTon
             if(ObjectDic[name].Count > 1)
             {
                 GameObject obj = ObjectDic[name].Dequeue();
+                obj.transform.parent = null;
                 obj.SetActive(true);
+                Debug.Log("getObj " + name);
                 return obj;
             }
             else if(ObjectDic[name].Count == 1)
@@ -89,11 +91,20 @@ namespace YH_SingleTon
             }
             return null;
         }
+        public GameObject GetObj(string name,Vector3 pos)
+        {
+            GameObject obj = GetObj(name);
+            obj.transform.position = pos;
+            return obj;
+        }
+
         public void GiveBackObj(GameObject obj)
         {
             obj.SetActive(false);
             obj.transform.parent = baseObject.transform;
             ObjectDic[obj.name].Enqueue(obj);
+            Debug.Log("giveBackObj " + obj.name);
+
         }
         private void FillQueue(GameObject[] objs,uint fillCount)
         {
