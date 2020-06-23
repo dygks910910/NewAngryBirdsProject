@@ -30,11 +30,17 @@ namespace YH_Helper
 
         public static void BirdDieProcessing(GameObject pivotObj,GameObject birdObj)
         {
+            //애니메이션 변수 초기화.
+            Animator anim = birdObj.GetComponent<Animator>();
+            anim.SetBool("IsCollision", false);
+            anim.SetBool("ResetAnimation", false);
+
             BirdReturnToObjPool(pivotObj);
             CreateBirdDieEffect(birdObj);
         }
         private static void BirdReturnToObjPool(GameObject pivotObj)
         {
+
             YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(pivotObj);
         }
         private static void CreateBirdDieEffect(GameObject birdObj)

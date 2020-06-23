@@ -185,8 +185,11 @@ namespace YH_Class
             Rigidbody2D rgidBdy = bird.GetComponentInChildren<Rigidbody2D>();
             rgidBdy.bodyType = RigidbodyType2D.Dynamic;
             rgidBdy.AddForce(shotingDir * fForce, ForceMode2D.Impulse);
+
+            bird.GetComponentInChildren<BirdAnimationChanger>().birdState = eBirdState.FLY;
             Shoting = false;
             bird = null;
+            
         }
         private void SetStrapLine(Vector2 inner,Vector2 outer,Vector3 stretchDest)
         {
