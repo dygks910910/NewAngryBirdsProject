@@ -6,7 +6,8 @@ using UnityEngine;
 public class obstacleInteration : MonoBehaviour
 {
     const int MAX_SPRITE_COUNT = 4;
-    public int hp = 50;
+    public int max_hp = 50;
+    public int hp = 0;
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
     [SerializeField]
@@ -17,6 +18,7 @@ public class obstacleInteration : MonoBehaviour
     int preIdx = -1;
 
     // Start is called before the first frame update
+   
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -88,6 +90,10 @@ public class obstacleInteration : MonoBehaviour
         tmpObj.GetComponent<ParticleSystem>().Play();
         YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(gameObject);
 
+    }
+    private void OnEnable()
+    {
+        hp = max_hp;
     }
 
 }

@@ -53,6 +53,27 @@ namespace YH_Helper
             dust.GetComponent<ParticleSystem>().Play();
             anim.SetBool("ResetAnimation", true);
         }
+
+        public  static void CreateCollisionEffects(string effectName,Vector2 position)
+        {
+            GameObject effect = YH_SingleTon.YH_ObjectPool.Instance.GetObj(effectName);
+            effect.transform.position = position;
+            effect.GetComponent<ControlParticlesInChild>().PlayParticle();
+        }
+
+        public static void ExplosionObjects(GameObject obj,float bombRadious,float bombPower)
+        {
+            Rigidbody2D rbody;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(obj.transform.position, bombRadious);
+            for (int i = 0; i < colliders.Length; ++i)
+            {
+                rbody = colliders[i].gameObject.GetComponent<Rigidbody2D>();
+                if (rbody != null)
+                {
+                    rbody.AddExplosionForce(bombPower, obj.transform.position, bombRadious);
+                }
+            }
+        }
     }
 
 }

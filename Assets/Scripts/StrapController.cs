@@ -9,7 +9,7 @@ namespace YH_Class
         public GameObject InnerStrap;
         public GameObject OuterStrap;
         public UnityEngine.Color StrapColor;
-        public Camera CvtCamera;
+        public Camera mainCamera;
         public GameObject bird;
         public float StrapHeight = 0.1f;
         public float StrapMaxLength = 1.5f;
@@ -23,12 +23,14 @@ namespace YH_Class
         private Vector2 InnerPos;
         private Vector2 OuterPos;
         private Vector2 BetweenStrapCenter;
-        
+        private Vector3 cameraOriginPosition;
         private Rect availableArea;
         // Start is called before the first frame update
         LineRenderer InnerLine;
         LineRenderer OuterLine;
-
+        private CamFollow camfllow;
+        public delegate void ShotingDo();
+        public event ShotingDo shotingEventHandler;
         void Start()
         {
 
@@ -52,7 +54,12 @@ namespace YH_Class
 
             SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
 
+            cameraOriginPosition = mainCamera.transform.position;
+
+            camfllow = mainCamera.GetComponent<CamFollow>();
+
             ReloadBirds(bird);
+            shotingEventHandler += ShotingBird;
 
         }
 
@@ -64,7 +71,7 @@ namespace YH_Class
                 MouseInput();
             else
             {
-                ShotingBird();
+                shotingEventHandler();
             }
             //bird.transform.forward  = Vector3.Normalize(BetweenStrapCenter - MousePosition);
 
@@ -105,7 +112,7 @@ namespace YH_Class
             {
                 // 마우스 왼쪽 버튼을 누르고 있는 도중의 처리
                 MousePosition = Input.mousePosition;
-                MousePosition = CvtCamera.ScreenToWorldPoint(MousePosition);
+                MousePosition = mainCamera.ScreenToWorldPoint(MousePosition);
                 Vector2 direction = Vector3.Normalize(MousePosition - BetweenStrapCenter);
                 if (Vector3.Cross(new Vector3(0, 1, 0), direction).z < 0)
                 {
@@ -137,7 +144,7 @@ namespace YH_Class
             if (Input.GetMouseButtonDown(0))
             {
                 MousePosition = Input.mousePosition;
-                MousePosition = CvtCamera.ScreenToWorldPoint(MousePosition);
+                MousePosition = mainCamera.ScreenToWorldPoint(MousePosition);
 
                 if (true == availableArea.Contains(MousePosition))
                 {
@@ -169,8 +176,6 @@ namespace YH_Class
                 // 마우스 왼쪽 버튼을 뗄 때의 처리
             }
         }
-        
-      
         private void ShotingBird()
         {
             //슈팅 방향 설정.
@@ -186,6 +191,7 @@ namespace YH_Class
             rgidBdy.AddForce(shotingDir * fForce, ForceMode2D.Impulse);
 
             bird.GetComponentInChildren<BirdAnimationChanger>().birdState = eBirdState.FLY;
+            camfllow.bird = bird.transform.Find(bird.name);
             Shoting = false;
             bird = null;
         }

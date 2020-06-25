@@ -1,23 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YH_Class;
 
-public class CBirdCollider : MonoBehaviour
+namespace YH_Class
 {
-    [SerializeField]
-    private GameObject birdCollisionEffect;
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class CBirdCollider : MonoBehaviour
     {
-        //Debug.Log(collision.otherCollider.name);
-        GameObject effect =  YH_SingleTon.YH_ObjectPool.Instance.GetObj(birdCollisionEffect.name);
-        effect.transform.position = gameObject.transform.position;
-        effect.GetComponent<ControlParticlesInChild>().PlayParticle();
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.CompareTag("WorldBoundary"))
+        [SerializeField]
+        private GameObject birdCollisionEffect;
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            YH_Helper.YH_Helper.BirdDieProcessing(gameObject.transform.parent.gameObject, gameObject);
+            YH_Helper.YH_Helper.CreateCollisionEffects(birdCollisionEffect.name, gameObject.transform.position);
+        }
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("WorldBoundary"))
+            {
+                YH_Helper.YH_Helper.BirdDieProcessing(gameObject.transform.parent.gameObject, gameObject);
+            }
         }
     }
+
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
+using TMPro.EditorUtilities;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
@@ -83,9 +85,11 @@ namespace YH_SingleTon
             }
             else if(ObjectDic[name].Count == 1)
             {
+                GameObject tmp;
                 for(int i =0; i < MIN_THREASHHOLD; ++i)
                 {
-                    ObjectDic[name].Enqueue(Instantiate(ObjectDic[name].Peek()));
+                    tmp = CreateObject(ObjectDic[name].Peek());
+                    ObjectDic[name].Enqueue(tmp);
                 }
                 return GetObj(name);
             }
@@ -102,9 +106,13 @@ namespace YH_SingleTon
         {
             obj.SetActive(false);
             obj.transform.parent = baseObject.transform;
+
+            if(!ObjectDic.ContainsKey(obj.name))
+            {
+                ObjectDic.Add(obj.name, new Queue<GameObject>());
+            }
             ObjectDic[obj.name].Enqueue(obj);
             Debug.Log("giveBackObj " + obj.name);
-
         }
         private void FillQueue(GameObject[] objs,uint fillCount)
         {
@@ -114,15 +122,21 @@ namespace YH_SingleTon
                 ObjectDic.Add(objs[i].name, new Queue<GameObject>());
                 for (int genCount = 0; genCount < MAX_THREASHHOLD; ++genCount)
                 {
-                    tmpObj = Instantiate(objs[i]);
-                    tmpObj.SetActive(false);
-                    tmpObj.transform.parent = baseObject.transform;
-                    //(Clone)제거
-                    tmpObj.name = objs[i].name;
+                    tmpObj = CreateObject(objs[i]);
                     ObjectDic[objs[i].name].Enqueue(tmpObj);
                 }
 
             }
+        }
+        private GameObject CreateObject(GameObject srcobj)
+        {
+            GameObject tmpObj;
+            tmpObj = Instantiate(srcobj);
+            tmpObj.SetActive(false);
+            tmpObj.transform.parent = baseObject.transform;
+            //(Clone)제거
+            tmpObj.name = srcobj.name;
+            return tmpObj;
         }
     }
 

@@ -8,6 +8,7 @@ namespace YH_Class
 {
     public class WorldArea : MonoBehaviour
     {
+        [Tooltip("Left top이 원점")]
         public Rect worldRect = new Rect();
         public float range = 5.0f;
     }
