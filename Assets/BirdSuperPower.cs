@@ -151,7 +151,7 @@ namespace YH_Class
             YH_SingleTon.YH_ObjectPool.Instance.GetObj("ColisionEffectBoombBird", obj.transform.position);
             GameObject eggBomb = YH_SingleTon.YH_ObjectPool.Instance.GetObj("EggBomb", obj.transform.position);
             float collideryOffset = eggBomb.GetComponent<CapsuleCollider2D>().size.y;
-            eggBomb.transform.position = new Vector2(eggBomb.transform.position.x, eggBomb.transform.position.y - collideryOffset*2);
+            eggBomb.transform.position = new Vector2(eggBomb.transform.position.x, eggBomb.transform.position.y - collideryOffset*3);
             //YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(obj);
             Rigidbody2D objRbody = obj.GetComponent<Rigidbody2D>();
             Rigidbody2D eggRbody = eggBomb.GetComponent<Rigidbody2D>();

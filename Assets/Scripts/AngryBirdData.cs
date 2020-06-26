@@ -1,29 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.GameCenter;
+
 namespace YH_Data
 {
     [System.Serializable]
     public struct ObstacleInfo
     {
-        string objectName;
-        Vector3 objPosition;
-        Vector3 objScale;
-        Quaternion objRotation;
+        public string objectName;
+        public Vector3 objPosition;
+        public Vector3 objScale;
+        public Quaternion objRotation;
+        public bool isStatic;
     }
-    [System.Serializable]
-    public struct StaticObject
-    {
-        string BackgroundName;
-        Vector3 objPosition;
-        Vector3 objScale;
-        Quaternion objRotation;
-    }
+    
     [System.Serializable]
     public class AngryBirdMapData
     {
-        List<ObstacleInfo> obstacleInfo;
-        List<StaticObject> staticObjects;
+        public List<ObstacleInfo> obstacleInfo = new List<ObstacleInfo>();
+
+        public string objectToJson()
+        {
+            return JsonUtility.ToJson(this);
+        }
+        static public T JsonToObject<T>(string JsonData)
+        {
+            return JsonUtility.FromJson<T>(JsonData);
+        }
+        public void PrintData()
+        {
+            foreach(var obstacle in obstacleInfo)
+            {
+                Debug.Log(obstacle.objectName);
+                Debug.Log(obstacle.objPosition);
+                Debug.Log(obstacle.objScale);
+                Debug.Log(obstacle.objRotation);
+                Debug.Log(obstacle.isStatic);
+            }
+        }
+
+        public void CreateAllObject()
+        {
+            
+
+        }
     }
 
     [System.Serializable]

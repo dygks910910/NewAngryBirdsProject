@@ -9,22 +9,21 @@ namespace YH_Class
     public class WorldArea : MonoBehaviour
     {
         [Tooltip("Left top이 원점")]
-        public Rect worldRect = new Rect();
+        public Rect worldRect;
         public float range = 5.0f;
+       
     }
 
     [CustomEditor(typeof(WorldArea))]
     public class WorldAreaEditor : Editor
     {
-        public GameObject[] objs = null;
-        public Vector3 originPos = new Vector3(0, 0, -1);
+        public Vector3 originPos;
         void OnSceneGUI()
         {
             WorldArea rectObj = target as WorldArea;
             if (rectObj.worldRect == null)
                 return;
             originPos = rectObj.transform.position;
-            Handles.color = Color.cyan;
 
             Vector3[] verts = new Vector3[]
             {
@@ -33,6 +32,8 @@ namespace YH_Class
             new Vector3(originPos.x + rectObj.range, originPos.y + rectObj.range, -1),//RB
             new Vector3(originPos.x + rectObj.range, originPos.y, -1)//RT
             };
+
+            Handles.color = Color.cyan;
             Handles.DrawSolidRectangleWithOutline(verts, new Color(0.5f, 0.5f, 0.5f, 0.1f), new Color(0, 0, 0, 1));
 
             foreach (Vector3 posCube in verts)
@@ -49,18 +50,11 @@ namespace YH_Class
             rectObj.worldRect.width = rectObj.range * 2;
             rectObj.worldRect.height = -rectObj.range;
 
-            //LT to RT
-            Handles.DrawLine(new Vector3(rectObj.worldRect.xMin, rectObj.worldRect.yMin, -1),
-                new Vector3(rectObj.worldRect.xMax, rectObj.worldRect.yMin, -1));
-            ////RT to RB
-            Handles.DrawLine(new Vector3(rectObj.worldRect.xMax, rectObj.worldRect.yMin, -1),
-                new Vector3(rectObj.worldRect.xMax, rectObj.worldRect.yMax, -1));
-            //RB to LB
-            Handles.DrawLine(new Vector3(rectObj.worldRect.xMax, rectObj.worldRect.yMax, -1),
-                new Vector3(rectObj.worldRect.xMin, rectObj.worldRect.yMax, -1));
-            ////LB to LT
-            Handles.DrawLine(new Vector3(rectObj.worldRect.xMin, rectObj.worldRect.yMax, -1),
-                new Vector3(rectObj.worldRect.xMin, rectObj.worldRect.yMin, -1));
+            YH_Debug.DebugUtil.DrawRectInScene(rectObj.worldRect.x, rectObj.worldRect.y, rectObj.worldRect.xMax, rectObj.worldRect.yMax);
+        }
+        public static Rect WorldRect
+        {
+            get => WorldRect;
         }
 
     }

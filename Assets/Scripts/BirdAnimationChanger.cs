@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace YH_Class
 {
-    public enum eBirdState{IDLE,FLY,COLLIDED }
+    public enum eBirdState{IDLE,FLY,COLLIDED,DiSABLE }
     public class BirdAnimationChanger : MonoBehaviour
     {
         Rigidbody2D birdRigidBody;
@@ -16,7 +16,7 @@ namespace YH_Class
         public delegate IEnumerator OnchangetoCollisionMethod();
         public event OnchangetoCollisionMethod onChangeToCollitionStateEvent;
 
-
+        public GameObject birdCollisionEffect;
         private BirdSuperPower superPowerClass;
 
         private static WaitForSeconds wait1Sec = new WaitForSeconds(0.1f); 
@@ -47,16 +47,27 @@ namespace YH_Class
         {
             //각속도+파워를 업데이트.
             birdAnimator.SetFloat("velocity", birdRigidBody.velocity.magnitude + Mathf.Abs(birdRigidBody.angularVelocity));
-            birdAnimator.SetBool("useSuperPower", superPowerClass.usedPower);
+            if( superPowerClass && superPowerClass.superPowerType != BirdSuperPower.ePowerType.None)
+                birdAnimator.SetBool("useSuperPower", superPowerClass.usedPower);
 
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
             birdAnimator.SetBool("IsCollision", true);
             birdState = eBirdState.COLLIDED;
-        }
+            YH_Helper.YH_Helper.CreateCollisionEffects(birdCollisionEffect.name, gameObject.transform.position);
 
-        private void OnEnable()
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("WorldBoundary"))
+            {
+                YH_Helper.YH_Helper.BirdDieProcessing(gameObject.transform.parent.gameObject, gameObject);
+                birdState = eBirdState.COLLIDED;
+            }
+        }
+         
+    private void OnEnable()
         {
             //birdAnimator.Play("Entry");
         }

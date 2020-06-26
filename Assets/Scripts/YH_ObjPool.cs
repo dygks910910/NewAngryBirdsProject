@@ -70,6 +70,9 @@ namespace YH_SingleTon
             //ObjectDic = Resources.LoadAll("Prefabs").ToDictionary(data => data.name, data=> data as GameObject);
             GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/CachingPrefabs");
             FillQueue(prefabs, MAX_THREASHHOLD);
+            GameObject[] prefabsOnlyOne = Resources.LoadAll<GameObject>("Prefabs/ChchingOnecePrefabs");
+            FillQueue(prefabsOnlyOne, 1);
+
         }
 
         //실패시 null 리턴.

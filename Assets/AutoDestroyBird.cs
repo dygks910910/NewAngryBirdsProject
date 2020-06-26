@@ -14,10 +14,12 @@ namespace YH_Class
         private Animator anim;
         private WorldArea worldAreaScripts;
         private Vector2 tmpVec;
+        BirdAnimationChanger animChanger;
         // Start is called before the first frame update
         void Awake()
         {
             anim = GetComponent<Animator>();
+            animChanger = GetComponent<BirdAnimationChanger>();
             //worldAreaScripts = WorldRect.GetComponent<WorldArea>();
 
         }
@@ -40,7 +42,8 @@ namespace YH_Class
                     {
                         GameObject effect =
                             YH_SingleTon.YH_ObjectPool.Instance.GetObj(destoryEffect.name, gameObject.transform.position);
-                        effect.GetComponent<ParticleSystem>().Play();
+                        effect.GetComponent<ControlParticlesInChild>().PlayParticle();
+                        animChanger.birdState = eBirdState.DiSABLE;
                     }
                     break;
                 }

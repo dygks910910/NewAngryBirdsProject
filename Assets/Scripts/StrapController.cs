@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 
@@ -6,20 +7,23 @@ namespace YH_Class
 {
     public class StrapController : MonoBehaviour
     {
-        public GameObject InnerStrap;
-        public GameObject OuterStrap;
+      
         public UnityEngine.Color StrapColor;
         public Camera mainCamera;
         public GameObject bird;
-        public float StrapHeight = 0.1f;
-        public float StrapMaxLength = 1.5f;
-        public float StrapMaxPower = 20;
+        public GameManager gameManager;
+
+
+
+        private float StrapHeight = 0.1f;
+        private float StrapMaxLength = 1.5f;
+        private float StrapMaxPower = 20;
         private bool StartDrag = false;
         private bool Shoting = false;
-
-        Vector2 MousePosition;
-        Vector2 ShotingMousePosition;
-
+        public GameObject InnerStrap;
+        public GameObject OuterStrap;
+        private Vector2 MousePosition;
+        private Vector2 ShotingMousePosition;
         private Vector2 InnerPos;
         private Vector2 OuterPos;
         private Vector2 BetweenStrapCenter;
@@ -31,16 +35,15 @@ namespace YH_Class
         private CamFollow camfllow;
         public delegate void ShotingDo();
         public event ShotingDo shotingEventHandler;
-        void Start()
+        private void Start()
         {
-
             InnerPos = InnerStrap.transform.position;
             OuterPos = OuterStrap.transform.position;
             BetweenStrapCenter = Vector3.Lerp(OuterPos, InnerPos, 0.5f);
             availableArea.width = 1;
             availableArea.height = 1;
-            availableArea.x = BetweenStrapCenter.x - availableArea.width/2;
-            availableArea.y = BetweenStrapCenter.y - availableArea.height/2;
+            availableArea.x = BetweenStrapCenter.x - availableArea.width / 2;
+            availableArea.y = BetweenStrapCenter.y - availableArea.height / 2;
 
             CreateStrap(ref InnerLine, StrapHeight, StrapColor);
             InnerLine.sortingLayerName = "InnerBirdGun";
@@ -53,16 +56,11 @@ namespace YH_Class
             Vector3 PosForDrawLine = BetweenStrapCenter;
 
             SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
-
             cameraOriginPosition = mainCamera.transform.position;
-
             camfllow = mainCamera.GetComponent<CamFollow>();
-
-            ReloadBirds(bird);
+            //ReloadBirds(gameManager.GetNextBird());
             shotingEventHandler += ShotingBird;
-
         }
-
         // Update is called once per frame
         void Update()
         {
@@ -92,6 +90,7 @@ namespace YH_Class
         {
             obj.transform.position = BetweenStrapCenter;
             obj.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            bird = obj;
         }
         private void CreateStrap(ref LineRenderer line,float width,UnityEngine.Color color)
         {
