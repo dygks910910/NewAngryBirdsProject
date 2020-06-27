@@ -5,6 +5,16 @@ using UnityEngine.SocialPlatforms.GameCenter;
 
 namespace YH_Data
 {
+    public class DataManager : YH_SingleTon.Singleton<DataManager>
+    {
+        public AngryBirdMapData mapData = new AngryBirdMapData();
+        public PlayerCommonData playerCommonData = new PlayerCommonData();
+    
+    }
+
+
+
+
     [System.Serializable]
     public struct ObstacleInfo
     {
@@ -14,12 +24,9 @@ namespace YH_Data
         public Quaternion objRotation;
         public bool isStatic;
     }
-    
-    [System.Serializable]
-    public class AngryBirdMapData
-    {
-        public List<ObstacleInfo> obstacleInfo = new List<ObstacleInfo>();
 
+    public class Data
+    {
         public string objectToJson()
         {
             return JsonUtility.ToJson(this);
@@ -28,6 +35,19 @@ namespace YH_Data
         {
             return JsonUtility.FromJson<T>(JsonData);
         }
+    }
+
+    [System.Serializable]
+    public class AngryBirdMapData : Data
+    {
+        //모든 오브젝트
+        public List<ObstacleInfo> obstacleInfo = new List<ObstacleInfo>();
+        //gameManager에 저장될 값.
+        public List<string> birdInfo = new List<string>();
+        
+        //WorldRect값.
+        public Rect worldArea;
+        public float worldRange;
         public void PrintData()
         {
             foreach(var obstacle in obstacleInfo)
@@ -39,19 +59,12 @@ namespace YH_Data
                 Debug.Log(obstacle.isStatic);
             }
         }
-
-        public void CreateAllObject()
-        {
-            
-
-        }
     }
 
     [System.Serializable]
-    public class AngryBirdPlayerData
+    public class PlayerCommonData : Data
     {
-
-
-
+        public float masterVolume;
     }
+
 }

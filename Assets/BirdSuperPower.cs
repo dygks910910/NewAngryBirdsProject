@@ -77,16 +77,16 @@ namespace YH_Class
             GameObject downBird1 = YH_SingleTon.YH_ObjectPool.Instance.GetObj("BlueBird", obj.transform.position);
 
             //offset 값 얻어오기.
-            CircleCollider2D coll = obj.GetComponent<CircleCollider2D>();
-            float birdRadious = coll.radius;
+            CapsuleCollider2D coll = obj.GetComponent<CapsuleCollider2D>();
+            Vector2 birdCollSize = coll.size;
 
             //offset 값 세팅.
             upBird1.transform.position = new Vector3(upBird1.transform.position.x,
-                upBird1.transform.position.y + birdRadious*3,
+                upBird1.transform.position.y + birdCollSize .y* 3,
                 upBird1.transform.position.z);
 
             downBird1.transform.position = new Vector3(downBird1.transform.position.x,
-                downBird1.transform.position.y - birdRadious * 3,
+                downBird1.transform.position.y - birdCollSize.y * 3,
                 downBird1.transform.position.z);
 
             Rigidbody2D rgidbody = obj.GetComponent<Rigidbody2D>();

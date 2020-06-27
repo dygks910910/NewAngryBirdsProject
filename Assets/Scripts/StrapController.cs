@@ -11,9 +11,9 @@ namespace YH_Class
         public UnityEngine.Color StrapColor;
         public Camera mainCamera;
         public GameObject bird;
-        public GameManager gameManager;
+        //public GameManager gameManager;
 
-
+        
 
         private float StrapHeight = 0.1f;
         private float StrapMaxLength = 1.5f;
@@ -29,10 +29,11 @@ namespace YH_Class
         private Vector2 BetweenStrapCenter;
         private Vector3 cameraOriginPosition;
         private Rect availableArea;
+        private CamFollow camfllow;
         // Start is called before the first frame update
         LineRenderer InnerLine;
         LineRenderer OuterLine;
-        private CamFollow camfllow;
+        //private CamFollow camfllow;
         public delegate void ShotingDo();
         public event ShotingDo shotingEventHandler;
         private void Start()
@@ -65,7 +66,7 @@ namespace YH_Class
         void Update()
         {
             YH_Debug.DebugUtil.DrawRect(availableArea);
-            if(!Shoting)
+            if (!Shoting)
                 MouseInput();
             else
             {
@@ -87,9 +88,10 @@ namespace YH_Class
            
         }
         public void ReloadBirds(GameObject obj)
-        {
+        {   
             obj.transform.position = BetweenStrapCenter;
             obj.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            obj.GetComponentInChildren<CapsuleCollider2D>().enabled = false;
             bird = obj;
         }
         private void CreateStrap(ref LineRenderer line,float width,UnityEngine.Color color)
@@ -187,6 +189,8 @@ namespace YH_Class
             //bird세팅.
             Rigidbody2D rgidBdy = bird.GetComponentInChildren<Rigidbody2D>();
             rgidBdy.bodyType = RigidbodyType2D.Dynamic;
+            bird.GetComponentInChildren<CapsuleCollider2D>().enabled = true;
+
             rgidBdy.AddForce(shotingDir * fForce, ForceMode2D.Impulse);
 
             bird.GetComponentInChildren<BirdAnimationChanger>().birdState = eBirdState.FLY;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditorInternal;
 using System.Reflection;
 using System;
+using UnityEngine.UI;
 
 namespace YH_Helper
 {
@@ -74,6 +75,51 @@ namespace YH_Helper
                 }
             }
         }
+        public static float CalcPower(Collision2D collision)
+        {
+            //rigidBody 끼리 충돌.
+            float power = 0;
+            if (collision.rigidbody != null)
+                power = collision.rigidbody.velocity.magnitude;
+            //내부힘 rigidbody
+            if (collision.otherRigidbody != null)
+            {
+                power += collision.otherRigidbody.velocity.magnitude;
+            }
+            power += collision.relativeVelocity.magnitude;
+            YH_SingleTon.ScoreManager.Instance.AddScore(250);
+            return power;
+        }
+        public static void DestoryObject(GameObject destoryEffect, GameObject obj)
+        {
+            //if (gameObject.CompareTag("WoodObstacle"))
+            //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
+            //else if (gameObject.CompareTag("IceObstacle"))
+            //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
+            //else if (gameObject.CompareTag("StoneObstacle"))
+            //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
+            //Destroy(gameObject);
+            GameObject tmpObj;
+            tmpObj = YH_SingleTon.YH_ObjectPool.Instance.GetObj(destoryEffect.name);
+            tmpObj.transform.position = obj.transform.position;
+            tmpObj.GetComponent<ParticleSystem>().Play();
+
+            YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(obj);
+        }
+
+        public static void Create3DScore(int score,Vector3 position)
+        {
+            Create3DScore(score, position, Color.white);
+        }
+        public static void Create3DScore(int score, Vector3 position,Color color)
+        {
+            GameObject textScore = YH_SingleTon.YH_ObjectPool.Instance.GetObj("3dCanvasTextField");
+            PopupTextEffect effect = textScore.GetComponentInChildren<PopupTextEffect>();
+            effect.CreateText(score.ToString(), position);
+            textScore.GetComponentInChildren<Text>().color = color;
+            YH_SingleTon.ScoreManager.Instance.AddScore(score);
+        }
     }
+   
 
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 public class obstacleInteration : MonoBehaviour
 {
     const int MAX_SPRITE_COUNT = 4;
-    public int max_hp = 50;
-    public int hp = 0;
+    public float max_hp = 50;
+    public float hp = 0;
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
     [SerializeField]
@@ -26,7 +26,7 @@ public class obstacleInteration : MonoBehaviour
         int idx = 0;
         for(int i = 1; i <= MAX_SPRITE_COUNT; ++i)
         {
-            hpDevisionStage[idx++] = (hp / 4) * i;
+            hpDevisionStage[idx++] = (int)(hp / 4) * i;
         }
     }
 
@@ -41,29 +41,18 @@ public class obstacleInteration : MonoBehaviour
             preIdx = idx;
         }
         if (hp < 0)
-            DestoryObject();
+            YH_Helper.YH_Helper.DestoryObject(destoryEffect,gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        float power = YH_Helper.YH_Helper.CalcPower(collision);
         //외부 힘 충격량 계산.
-        hp -= (int)CalcPower(collision);
+        hp -= power;
+        if(hp > 0)
+             YH_Helper.YH_Helper.Create3DScore((int)power * 10, gameObject.transform.position);
     }
 
-    private float CalcPower(Collision2D collision)
-    {
-        //rigidBody 끼리 충돌.
-        float power = 0;
-        if (collision.rigidbody != null)
-            power = collision.rigidbody.velocity.magnitude;
-        //내부힘 rigidbody
-        if (collision.otherRigidbody != null)
-        {
-            power += collision.otherRigidbody.velocity.magnitude;
-        }
-        power += collision.relativeVelocity.magnitude;
 
-        return power;
-    }
     private int GetSpriteIdxByHp()
     {
         for (int i = 0; i < MAX_SPRITE_COUNT-1; ++i)
@@ -75,22 +64,7 @@ public class obstacleInteration : MonoBehaviour
         }
         return -1;
     }
-    private void DestoryObject()
-    {
-        //if (gameObject.CompareTag("WoodObstacle"))
-        //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
-        //else if (gameObject.CompareTag("IceObstacle"))
-        //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
-        //else if (gameObject.CompareTag("StoneObstacle"))
-        //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
-        //Destroy(gameObject);
-        GameObject tmpObj;
-        tmpObj = YH_SingleTon.YH_ObjectPool.Instance.GetObj(destoryEffect.name);
-        tmpObj.transform.position = gameObject.transform.position;
-        tmpObj.GetComponent<ParticleSystem>().Play();
-        YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(gameObject);
-
-    }
+  
     private void OnEnable()
     {
         hp = max_hp;

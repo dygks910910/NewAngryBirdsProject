@@ -123,7 +123,7 @@ namespace YH_SingleTon
             for (int i = 0; i < objs.Length; ++i)
             {
                 ObjectDic.Add(objs[i].name, new Queue<GameObject>());
-                for (int genCount = 0; genCount < MAX_THREASHHOLD; ++genCount)
+                for (int genCount = 0; genCount < fillCount; ++genCount)
                 {
                     tmpObj = CreateObject(objs[i]);
                     ObjectDic[objs[i].name].Enqueue(tmpObj);
@@ -136,7 +136,7 @@ namespace YH_SingleTon
             GameObject tmpObj;
             tmpObj = Instantiate(srcobj);
             tmpObj.SetActive(false);
-            tmpObj.transform.parent = baseObject.transform;
+            tmpObj.transform.SetParent(baseObject.transform);
             //(Clone)제거
             tmpObj.name = srcobj.name;
             return tmpObj;
