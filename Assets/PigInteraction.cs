@@ -56,7 +56,7 @@ public class PigInteraction : MonoBehaviour
 
             preIdx = idx;
         }
-        if (pigHp < 0)
+        if (pigHp <= 0)
         {
             YH_Helper.YH_Helper.DestoryObject(destroyEffect, gameObject);
             YH_Helper.YH_Helper.Create3DScore(5000, gameObject.transform.position,Color.green);

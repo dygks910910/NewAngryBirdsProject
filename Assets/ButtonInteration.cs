@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using YH_Data;
 
 public class ButtonInteration : MonoBehaviour
 {
@@ -26,5 +27,10 @@ public class ButtonInteration : MonoBehaviour
     public void EnableThis()
     {
         gameObject.SetActive(true);
+    }
+    public void ReplayThisStage()
+    {
+        string stageName = YH_SingleTon.DataManager.Instance.currentMapName;
+        YH_SingleTon.DataManager.Instance.LoadMapData(stageName);
     }
 }

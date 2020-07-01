@@ -18,7 +18,6 @@ public class ShowScorePanel : MonoBehaviour
     const string CLEAR_STR = "LEVEL CLAERD!";
     const int STAR_COUNT = 3;
 
-
     private void OnEnable()
     {
         int curScore = YH_SingleTon.ScoreManager.Instance.Score;
@@ -68,5 +67,6 @@ public class ShowScorePanel : MonoBehaviour
     {
         scoreText.text = YH_SingleTon.ScoreManager.Instance.Score.ToString();
     }
+
 
 }

@@ -12,6 +12,7 @@ using TMPro.EditorUtilities;
 using YH_SingleTon;
 using System;
 using UnityEngine.UI;
+using UnityEditor.Animations;
 
 public class MapDataManagerWindow : EditorWindow
 {
@@ -66,6 +67,8 @@ public class MapDataManagerWindow : EditorWindow
     [SerializeField]
     private List<GameObject> palette = new List<GameObject>();
     private string path = "Assets/Resources/Prefabs/CachingPrefabs/";
+    private string pathOnece = "Assets/Resources/Prefabs/ChchingOnecePrefabs/";
+
     [SerializeField]
     private int paletteIndex;
     Vector2 palleteScollPos;
@@ -109,7 +112,10 @@ public class MapDataManagerWindow : EditorWindow
             GameObject prefab = palette[paletteIndex];
             GameObject gameObject = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
             gameObject.transform.position = cellCenter;
-
+            if(rotation90)
+            {
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+            }
             // Allow the use of Undo (Ctrl+Z, Ctrl+Y).
             Undo.RegisterCreatedObjectUndo(gameObject, "");
         }
@@ -117,11 +123,13 @@ public class MapDataManagerWindow : EditorWindow
     private void RefreshPalette()
     {
         palette.Clear();
-        string[] prefabFiles = System.IO.Directory.GetFiles(path, "*.prefab");
-        foreach (string prefabFile in prefabFiles)
+        List<string> prefabFile;
+        prefabFile = System.IO.Directory.GetFiles(path, "*.prefab").ToList();
+        prefabFile.AddRange(System.IO.Directory.GetFiles(pathOnece, "*.prefab"));
+        foreach (string prefab in prefabFile)
         {
-            GameObject asset = AssetDatabase.LoadAssetAtPath(prefabFile, typeof(GameObject)) as GameObject;
-            if (asset.tag.Contains("Obstacle") || asset.tag.Contains("Background"))
+            GameObject asset = AssetDatabase.LoadAssetAtPath(prefab, typeof(GameObject)) as GameObject;
+            if (asset.tag.Contains("Obstacle") || asset.tag.Contains("nessasary") || asset.tag.Contains("Pig"))
             {
                 palette.Add(asset);
             }
@@ -158,10 +166,12 @@ public class MapDataManagerWindow : EditorWindow
     {
         SceneView.duringSceneGui -= this.OnSceneGUI;
     }
+    private bool rotation90 = false;
     private void OnGUI()
     {
         paintMode = GUILayout.Toggle(paintMode, "start painting", "button", GUILayout.Height(60f));
 
+        rotation90 = GUILayout.Toggle(rotation90, "rotation90");
         // Get a list of previews, one for each of our prefabs
         List<GUIContent> paletteIcons = new List<GUIContent>();
         foreach (GameObject prefab in palette)
@@ -182,7 +192,8 @@ public class MapDataManagerWindow : EditorWindow
             scollPos = GUILayout.BeginScrollView(scollPos);
             for (int i = 0; i < obstaclePrefabs.Count; ++i)
             {
-                YH_CustomEditor.CustomWndHelper.CreateLabel("Obstacle", obstaclePrefabs[i].name);
+                if(obstaclePrefabs != null)
+                    YH_CustomEditor.CustomWndHelper.CreateLabel("Obstacle", obstaclePrefabs[i].name);
             }
             GUILayout.Space(10);
            
@@ -199,7 +210,11 @@ public class MapDataManagerWindow : EditorWindow
         EditorGUILayout.PropertyField(stringsProperty, true); // True means show children
         so.ApplyModifiedProperties(); // Remember to apply modified properties
 
-        if(GUILayout.Button("except necessary and clear scene "))
+        if (GUILayout.Button("Create Necessary Objs"))
+        {
+            CreateNecessaryObject();
+        }
+        if (GUILayout.Button("clear scene "))
         {
             ClearSceneObjects();
         }
@@ -220,31 +235,30 @@ public class MapDataManagerWindow : EditorWindow
 
 
     }
+    void CreateNecessaryObject()
+    {
+        List<GameObject> prefabList = new List<GameObject>();
+        //birdGun,canvas,eventSystem,worldRect,WorldBounds
+        prefabList.Add(AssetDatabase.LoadAssetAtPath(pathOnece + "Canvas.prefab", typeof(GameObject)) as GameObject);
+        prefabList.Add(AssetDatabase.LoadAssetAtPath(pathOnece + "BirdGun.prefab", typeof(GameObject)) as GameObject);
+        prefabList.Add(AssetDatabase.LoadAssetAtPath(pathOnece + "EventSystem.prefab", typeof(GameObject)) as GameObject);
+        prefabList.Add(AssetDatabase.LoadAssetAtPath(pathOnece + "WorldBounds.prefab", typeof(GameObject)) as GameObject);
+        prefabList.Add(AssetDatabase.LoadAssetAtPath(pathOnece + "WorldRect.prefab", typeof(GameObject)) as GameObject);
+        prefabList.Add(AssetDatabase.LoadAssetAtPath(pathOnece + "Main Camera.prefab", typeof(GameObject)) as GameObject);
+        foreach (var element in prefabList)
+        {
+            PrefabUtility.InstantiatePrefab(element);
+            Undo.RegisterCreatedObjectUndo(element,"");
+        }
+
+    }
     void ClearSceneObjects()
     {
         List<GameObject> allRootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects().ToList();
         foreach (var obj in allRootObjects)
         {
-            if (obj.name == "GameManager")
-                continue;
-            if (obj.name == "BirdGun")
-                continue;
-            if (obj.name == "Canvas")
-                continue;
-            if (obj.name == "EventSystem")
-                continue;
-            if (obj.name == "WorldRect")
-                continue;
-            if (obj.name == "BackGround")
-                continue;
-            if (obj.name == "Main Camera")
-                continue;
-            if (obj.name == "Ground")
-                continue;
-            if (obj.name == "WorldBounds")
-                continue;
-            DestroyImmediate(obj);
             Undo.DestroyObjectImmediate(obj);
+            DestroyImmediate(obj);
 
         }
     }
@@ -259,7 +273,7 @@ public class MapDataManagerWindow : EditorWindow
         GameObject mainCamera = null, birdGun = null,worldRect = null;
         for (int i = 0; i < obstaclePrefabs.Count; ++i)
         {
-           
+           //추가로 필요한 Component데이터를 쓰기위한 캐싱.
             if (obstaclePrefabs[i].name == "Main Camera")
             {
                 mainCamera = obstaclePrefabs[i];
@@ -269,6 +283,7 @@ public class MapDataManagerWindow : EditorWindow
                 birdGun = obstaclePrefabs[i];
             else if (obstaclePrefabs[i].name == "WorldRect")
                 worldRect = obstaclePrefabs[i];
+            //장애물 add
             info.objectName = obstaclePrefabs[i].name;
             info.objPosition = obstaclePrefabs[i].transform.position;
             info.objRotation = obstaclePrefabs[i].transform.rotation;
@@ -294,13 +309,19 @@ public class MapDataManagerWindow : EditorWindow
 
     private void LoadMapFile()
     {
-        string jsonPath = EditorUtility.OpenFilePanel("Json 파일을 Open할 경로", "Assets", ".json");
+        string jsonPath = EditorUtility.OpenFilePanel("Json 파일을 Open할 경로", "Assets/Data/MapData/", "json");
         string jsonString = File.ReadAllText(jsonPath);
 
         AngryBirdMapData data = new AngryBirdMapData();
-        data.JsonToObject<AngryBirdMapData>(jsonString);
+        data = data.JsonToObject<AngryBirdMapData>(jsonString);
         data.PrintData();
-
+        threeStarScore = data.threeStarScore;
+        if (birdList.Count > 0)
+            birdList.Clear();
+        foreach(var bird in data.birdInfoList)
+        {
+            birdList.Add(FindPrefab(bird));
+        }
         //Resources.LoadAll<GameObject>("Prefabs/CachingOnecePrefabs");
 
         //ObstacleInfo info = new ObstacleInfo();

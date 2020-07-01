@@ -80,6 +80,7 @@ namespace YH_SingleTon
         //실패시 null 리턴.
         public GameObject GetObj(string name)
         {
+            
             if(ObjectDic[name].Count > 1)
             {
                 GameObject obj = ObjectDic[name].Dequeue();

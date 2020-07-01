@@ -35,6 +35,7 @@ namespace YH_Helper
             Animator anim = birdObj.GetComponent<Animator>();
             anim.SetBool("IsCollision", false);
             anim.SetBool("ResetAnimation", false);
+            birdObj.transform.position = birdObj.transform.position;
             CreateBirdDieEffect(birdObj);
             BirdReturnToObjPool(birdObj);
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class obstacleInteration : MonoBehaviour
 {
-    const int MAX_SPRITE_COUNT = 4;
+    const int MAX_SPRITE_COUNT = 3;
     public float max_hp = 50;
     public float hp = 0;
     public Sprite[] sprites;
@@ -26,7 +26,7 @@ public class obstacleInteration : MonoBehaviour
         int idx = 0;
         for(int i = 1; i <= MAX_SPRITE_COUNT; ++i)
         {
-            hpDevisionStage[idx++] = (int)(hp / 4) * i;
+            hpDevisionStage[idx++] = (int)(hp / MAX_SPRITE_COUNT) * i;
         }
     }
 
@@ -72,6 +72,7 @@ public class obstacleInteration : MonoBehaviour
     private void OnEnable()
     {
         hp = max_hp;
+        spriteRenderer.sprite = sprites[3];
     }
 
 }

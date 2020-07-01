@@ -14,9 +14,10 @@ namespace YH_SingleTon
 
         public void Init()
         {
-            mainPanel = gameObject.transform.Find("MainPanel").gameObject;
-            settingPanel = gameObject.transform.Find("SettingPanel").gameObject;
-            scorePanel = gameObject.transform.Find("ScorePanel").gameObject;
+            GameObject canvas = GameObject.Find("Canvas");
+            mainPanel = canvas.transform.Find("MainPanel").gameObject;
+            settingPanel = canvas.transform.Find("SettingPanel").gameObject;
+            scorePanel = canvas.transform.Find("ScorePanel").gameObject;
         }
         public void SetMainPanelEnable(bool b)
         {

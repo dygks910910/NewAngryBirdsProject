@@ -33,6 +33,7 @@ namespace YH_SingleTon
             checkGameoverCorutine = null;
             YH_SingleTon.CameraManager.Instance.Init();
             YH_SingleTon.ScoreManager.Instance.Init();
+            MainUIController.Instance.Init();
             //StrapController.Instance.Init();
             if (birdList.Count > 0)
                 birdList.Clear();

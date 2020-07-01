@@ -53,6 +53,7 @@ namespace YH_SingleTon
             screenWidthFactor = (float)Screen.width / (float)Screen.height;
             if(gameObject.activeInHierarchy)
                 StartCoroutine(CheckState());
+            routine = null;
         }
         BirdAnimationChanger animChanger;
         Coroutine routine = null;
@@ -107,7 +108,7 @@ namespace YH_SingleTon
             for (int i = 0; i < 30; ++i)
             {
                 camSize = Mathf.Lerp(camSize, originSize, (1.0f/30)* i);
-                camPosition = Vector3.Lerp(transform.position, originPosition, (1.0f / 30.0f) * i);
+                camPosition = Vector3.Lerp(cam.transform.position, originPosition, (1.0f / 30.0f) * i);
                 cam.transform.position = camPosition;
                 cam.orthographicSize = camSize;
                 yield return wait60per1Sec;
@@ -125,9 +126,9 @@ namespace YH_SingleTon
                     StartCoroutine(SetOriginState());
                     break;
                 }
-                newPos = bird.transform.position;
+                newPos = cam.transform.position;
                 newPos.x = bird.position.x;
-                newPos.y = bird.position.y;
+                //newPos.y = bird.position.y;
 
                 newPos.x = Mathf.Clamp(newPos.x,
                     leftBoundary + (camSize * screenWidthFactor),
@@ -136,7 +137,7 @@ namespace YH_SingleTon
                 //newPos.y = Mathf.Clamp(newPos.y,
                 //   BottomBoundary + camSize,
                 //   topBoundary - camSize);
-                transform.position = newPos;
+                cam.transform.position = newPos;
 
                // t += Time.deltaTime;
                //camSize =  Mathf.Lerp(originSize, originSize - 1, t);
