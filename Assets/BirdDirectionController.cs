@@ -10,7 +10,7 @@ namespace YH_Class
         private Rigidbody2D rBody;
         private BirdAnimationChanger animChanger;
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             rBody = GetComponent<Rigidbody2D>();
             animChanger = GetComponent<BirdAnimationChanger>();
@@ -26,9 +26,6 @@ namespace YH_Class
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
-
-            //transform.localRotation = Quaternion.Euler(0, 0, Mathf.Acos(cosTheta)*Mathf.Rad2Deg - 90);
-
         }
     }
 

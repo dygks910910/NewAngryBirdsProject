@@ -136,11 +136,6 @@ namespace YH_CustomEditor
         GameObject sprite3;
         GameObject sprite4;
         bool isUsingRigidBody = true;
-        //bool isUsingCircleCollider      =true;
-        //bool isUsingAnimator            =true;
-        //bool IsUsingBirdCollider        =true;
-        //bool IsUsingBirdAnimatioChanger =true;
-        //bool IsUsingAutoDestroyBird     =true;
         bool isUsingObstacleInterationScripts = true;
 
         int tagIdx = 0;

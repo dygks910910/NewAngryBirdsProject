@@ -83,24 +83,6 @@ namespace YH_SingleTon
             }
 
         }
-        //void Update()
-        //{
-
-        //    YH_Debug.DebugUtil.DrawRect(leftBoundary, topBoundary, rightBoundary, BottomBoundary);
-        //    if (bird != null && bird.gameObject.activeSelf)
-        //    {
-
-        //    }
-        //    else
-        //    {
-        //        camSize = originSize;
-        //        camPosition = originPosition;
-        //        cam.transform.position = originPosition;
-        //        cam.orthographicSize = originSize;
-        //        bird = null;
-        //    }
-
-        //}
         IEnumerator SetOriginState()
         {
             camState = CameraState.IDLE;
@@ -128,19 +110,12 @@ namespace YH_SingleTon
                 }
                 newPos = cam.transform.position;
                 newPos.x = bird.position.x;
-                //newPos.y = bird.position.y;
 
                 newPos.x = Mathf.Clamp(newPos.x,
                     leftBoundary + (camSize * screenWidthFactor),
                     rightBoundary - (camSize * screenWidthFactor));
 
-                //newPos.y = Mathf.Clamp(newPos.y,
-                //   BottomBoundary + camSize,
-                //   topBoundary - camSize);
                 cam.transform.position = newPos;
-
-               // t += Time.deltaTime;
-               //camSize =  Mathf.Lerp(originSize, originSize - 1, t);
                 yield return wait60per1Sec;
             }
 

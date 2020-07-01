@@ -4,7 +4,8 @@ using UnityEngine;
 
 public static class Rigidbody2DExtension
 {
-    public static void AddExplosionForce(this Rigidbody2D body, float explosionForce, Vector3 explosionPosition, float explosionRadius)
+    public static void AddExplosionForce(this Rigidbody2D body, float explosionForce, 
+        Vector3 explosionPosition, float explosionRadius)
     {
         Vector3 dir = (body.transform.position - explosionPosition);
         float wearoff = (dir.magnitude / explosionRadius);

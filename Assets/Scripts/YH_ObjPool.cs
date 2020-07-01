@@ -74,9 +74,7 @@ namespace YH_SingleTon
             FillQueue(prefabs, MAX_THREASHHOLD);
             GameObject[] prefabsOnlyOne = Resources.LoadAll<GameObject>("Prefabs/ChchingOnecePrefabs");
             FillQueue(prefabsOnlyOne, 1);
-
         }
-
         //실패시 null 리턴.
         public GameObject GetObj(string name)
         {

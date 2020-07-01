@@ -8,12 +8,11 @@ namespace YH_SingleTon
 {
     public class StrapController : YH_SingleTon.Singleton<StrapController>
     {
-      
-        public UnityEngine.Color StrapColor;
+        #region 외부 세팅 변수
         public GameObject bird;
         //public GameManager gameManager;
-
-
+        #endregion
+        #region drag&drop관련 변수
         public bool IsInputEnable = false;
         private GameObject mainCamera;
         private float StrapHeight = 0.1f;
@@ -21,6 +20,9 @@ namespace YH_SingleTon
         private float StrapMaxPower = 20;
         private bool StartDrag = false;
         private bool Shoting = false;
+        #endregion
+        #region 초기 변수
+        public UnityEngine.Color StrapColor = Color.black;
         public GameObject InnerStrap;
         public GameObject OuterStrap;
         private Vector2 MousePosition;
@@ -34,15 +36,29 @@ namespace YH_SingleTon
         // Start is called before the first frame update
         LineRenderer InnerLine;
         LineRenderer OuterLine;
-        //private CamFollow camfllow;
+        #endregion
+        #region delegate,event
+
         public delegate void ShotingDo(GameObject bird);
         public event ShotingDo shotingEventHandler;
-
+        #endregion
+        #region unity callback
         public void Awake()
         {
             shotingEventHandler += ShotingBird;
         }
-        public  void Init()
+        void Update()
+        {
+            YH_Debug.DebugUtil.DrawRect(availableArea);
+            if (!Shoting)
+                MouseInput();
+            else
+            {
+                shotingEventHandler(bird);
+            }
+        }
+        #endregion
+        public void Init()
         {
             StopAllCoroutines();
             mainCamera = GameObject.Find("Main Camera");
@@ -70,54 +86,22 @@ namespace YH_SingleTon
 
             SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
             cameraOriginPosition = mainCamera.transform.position;
-            //camfllow = mainCamera.GetComponent<CamFollow>();
-            //ReloadBirds(gameManager.GetNextBird());
             GameManager.Instance.ReloadBurdGun();
         }
         // Update is called once per frame
-        void Update()
-        {
-            YH_Debug.DebugUtil.DrawRect(availableArea);
-            if (!Shoting)
-                MouseInput();
-            else
-            {
-                shotingEventHandler(bird);
-            }
-            //bird.transform.forward  = Vector3.Normalize(BetweenStrapCenter - MousePosition);
 
 
-
-        }
+        #region private Custom
+        #region mouse Input
         private void MouseInput()
         {
-            if(bird != null)
+            if (bird != null)
             {
-                    MouseClick();
-                    MouseDrag();
-                    MouseButtonUp();
+                MouseClick();
+                MouseDrag();
+                MouseButtonUp();
             }
-           
-        }
-        public void ReloadBirds(GameObject obj)
-        {   
-            obj.transform.position = BetweenStrapCenter;
-            obj.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-            obj.GetComponentInChildren<CapsuleCollider2D>().enabled = false;
-            bird = obj;
-        }
-        private void CreateStrap(ref LineRenderer line,float width,UnityEngine.Color color)
-        {
-            line = new GameObject("Line").AddComponent<LineRenderer>();
-            line.material = new Material(Shader.Find("Diffuse"));
-            line.positionCount = 2;
-            line.startWidth = width;
-            line.endWidth = width;
-            line.startColor = color;
-            line.endColor = color;
-            line.useWorldSpace = false;
-            line.receiveShadows = false;
-            line.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+
         }
         private void MouseDrag()
         {
@@ -133,22 +117,18 @@ namespace YH_SingleTon
                     return;
                 }
                 float cosTheta = Vector2.Dot(direction, new Vector2(0, 1));
-
-                Vector2 NewMousePosition = MousePosition;
-                if ((NewMousePosition - BetweenStrapCenter).magnitude > StrapMaxLength)
+                Vector2 dragMousePosition = MousePosition;
+                if ((dragMousePosition - BetweenStrapCenter).magnitude > StrapMaxLength)
                 {
-                    //Vector2 mouseDirection = Vector3.Normalize(MousePosition - BetweenStrapCenter);
-                    NewMousePosition = BetweenStrapCenter + direction * StrapMaxLength;
-                    MousePosition = NewMousePosition;
+                    dragMousePosition = BetweenStrapCenter + direction * StrapMaxLength;
+                    MousePosition = dragMousePosition;
                 }
-
-                Vector3 PosForDrawLine = NewMousePosition;
+                Vector3 PosForDrawLine = dragMousePosition;
 
                 SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
                 bird.transform.position = PosForDrawLine;
                 //bird의 진행방향에 따라 회전.y축정렬을 -90하여 x축으로 바꿔줌.
-                bird.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Acos(cosTheta)*Mathf.Rad2Deg - 90);
-                //lr.SetPosition(2, OuterPos);
+                bird.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Acos(cosTheta) * Mathf.Rad2Deg - 90);
             }
         }
         private void MouseClick()
@@ -184,15 +164,25 @@ namespace YH_SingleTon
                     Shoting = true;
 
                     StartCoroutine(StrapReturn());
-                   
+
                 }
                 // 마우스 왼쪽 버튼을 뗄 때의 처리
             }
         }
+        #endregion
+
+        //GameManager에서 호출하는 public 함수.
+        public void ReloadBirds(GameObject obj)
+        {
+            obj.transform.position = BetweenStrapCenter;
+            obj.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            obj.GetComponentInChildren<CapsuleCollider2D>().enabled = false;
+            bird = obj;
+        }
         private void ShotingBird(GameObject bird)
         {
             //슈팅 방향 설정.
-            Vector2 shotingDir = (BetweenStrapCenter - ShotingMousePosition).normalized ;
+            Vector2 shotingDir = (BetweenStrapCenter - ShotingMousePosition).normalized;
             //슈팅 파워 설정.
             // (strapMaxLength / length) * MaxForce;
             float strapLength = (BetweenStrapCenter - ShotingMousePosition).magnitude;
@@ -210,6 +200,21 @@ namespace YH_SingleTon
             Shoting = false;
             bird = null;
         }
+
+        private void CreateStrap(ref LineRenderer line,float width,UnityEngine.Color color)
+        {
+            line = new GameObject("Line").AddComponent<LineRenderer>();
+            line.material = new Material(Shader.Find("Diffuse"));
+            line.positionCount = 2;
+            line.startWidth = width;
+            line.endWidth = width;
+            line.startColor = color;
+            line.endColor = color;
+            line.useWorldSpace = false;
+            line.receiveShadows = false;
+            line.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        }
+     
         private void SetStrapLine(Vector2 inner,Vector2 outer,Vector3 stretchDest)
         {
             stretchDest.z = -1;
@@ -238,6 +243,7 @@ namespace YH_SingleTon
             }
            
         }
+        #endregion
     }
-   
+
 }

@@ -6,7 +6,6 @@ namespace YH_Class
 {
     public class BirdSuperPower : MonoBehaviour
     {
-        public enum ePowerType { None,YellowBirdPower,GreenBirdPower,BoombBirdPower,BlueBirdSuperPower, ChickinBirdSuperPower}
         // Start is called before the first frame update
         public ePowerType superPowerType = ePowerType.None;
         public float fPower = 0;
@@ -14,14 +13,15 @@ namespace YH_Class
 
         private BirdAnimationChanger animChanger;
         public bool usedPower= false;
+
+        public enum ePowerType { None, YellowBirdPower, GreenBirdPower, BoombBirdPower,
+            BlueBirdSuperPower, ChickinBirdSuperPower }
         static public SuperPower[] superPowers = {null, new YellowBirdSuperPower(), new GreenBirdSuperPower(),
         new BoombBirdSuperPower(),new BlueBirdSuperPower(),new ChickinBirdSuperPower()};
         void Awake()
         {
             animChanger = GetComponent<BirdAnimationChanger>();
         }
-
-       
         // Update is called once per frame
         void Update()
         {
@@ -69,6 +69,7 @@ namespace YH_Class
     }
     class BlueBirdSuperPower : SuperPower
     {
+        const int offsetFactor = 3;
         public override SuperPower.DoingMethod DoSuperPower(GameObject obj, float power)
         {
             //오브젝트 활성화.
@@ -82,11 +83,11 @@ namespace YH_Class
 
             //offset 값 세팅.
             upBird1.transform.position = new Vector3(upBird1.transform.position.x,
-                upBird1.transform.position.y + birdCollSize .y* 3,
+                upBird1.transform.position.y + birdCollSize .y* offsetFactor,
                 upBird1.transform.position.z);
 
             downBird1.transform.position = new Vector3(downBird1.transform.position.x,
-                downBird1.transform.position.y - birdCollSize.y * 3,
+                downBird1.transform.position.y - birdCollSize.y * offsetFactor,
                 downBird1.transform.position.z);
 
             Rigidbody2D rgidbody = obj.GetComponent<Rigidbody2D>();

@@ -16,11 +16,20 @@ using UnityEditor.Animations;
 
 public class MapDataManagerWindow : EditorWindow
 {
-    [Tooltip("사용할 새 세팅")]
+    [Tooltip("사용할 Bird 세팅")]
     public List<GameObject> birdList = new List<GameObject>();
-    Editor editor;
+
+    #region static 변수.
+    static public List<GameObject> allObjects;
+    static public List<GameObject> allObjjectRoot;
+    static public List<GameObject> obstaclePrefabs;
+
+    static GameObject mainCamera;
+    static GameObject worldRect;
+    static GameObject gameManager;
+    #endregion
     [MenuItem("YH_Custom/MapDataManager")]
-    static void Init()
+    static void CreateWindow()
     {
         MapDataManagerWindow wnd = EditorWindow.CreateWindow<MapDataManagerWindow>("MapDataManager");
         wnd.Show();
@@ -34,31 +43,20 @@ public class MapDataManagerWindow : EditorWindow
             allObjjectRoot.Clear();
         if (obstaclePrefabs != null && obstaclePrefabs.Count > 0)
             obstaclePrefabs.Clear();
-
         allObjects = GameObject.FindObjectsOfType<GameObject>().ToList();
         allObjjectRoot = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects().ToList();
 
-        //데이터가 프리팹이며 장애물일경우 모두 저장.
-        //obstaclePrefabs = allObjjectRoot.Where(data => PrefabUtility.GetCorrespondingObjectFromSource(data) != null &&
-        //        PrefabUtility.GetPrefabInstanceHandle(data.transform) != null && 
-        //        (data.CompareTag("IceObstacle") || data.CompareTag("StoneObstacle") ||
-        //        data.CompareTag("WoodObstacle"))).ToList();
+        //데이터가 prefab인것만 읽어오기.
         obstaclePrefabs = allObjjectRoot.Where(data => PrefabUtility.GetCorrespondingObjectFromSource(data) != null &&
                PrefabUtility.GetPrefabInstanceHandle(data.transform) != null).ToList();
-
+        //component에 export할 값이 있어 캐싱.
         mainCamera = GameObject.Find("Main Camera");
         worldRect = GameObject.Find("WorldRect");
         gameManager = GameObject.Find("GameManager");
-
-
     }
-    static public List<GameObject> allObjects;
-    static public List< GameObject> allObjjectRoot;
-    static public List<GameObject> obstaclePrefabs;
+
     
-    static GameObject mainCamera;
-    static GameObject worldRect;
-    static GameObject gameManager;
+    
 
     private bool paintMode = false;
     private int threeStarScore = 0;
@@ -66,23 +64,24 @@ public class MapDataManagerWindow : EditorWindow
     private Vector2 cellSize = new Vector2(0.5f, 0.5f);
     [SerializeField]
     private List<GameObject> palette = new List<GameObject>();
+    private bool rotation90 = false;
+
+    #region constant value
     private string path = "Assets/Resources/Prefabs/CachingPrefabs/";
     private string pathOnece = "Assets/Resources/Prefabs/ChchingOnecePrefabs/";
+    #endregion
 
     [SerializeField]
     private int paletteIndex;
     Vector2 palleteScollPos;
+    #region SceneView Func
     private void OnSceneGUI(SceneView sceneView)
     {
         if (paintMode)
         {
             Vector2 cellCenter = GetSelectedCell(); // Refactoring, I moved some code in this function
-
-
             DisplayVisualHelp(cellCenter);
             HandleSceneViewInputs(cellCenter);
-
-            // Refresh the view
             sceneView.Repaint();
         }
     }
@@ -92,7 +91,6 @@ public class MapDataManagerWindow : EditorWindow
         {
             Ray guiRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
             Vector3 mousePosition = guiRay.origin - guiRay.direction * (guiRay.origin.z / guiRay.direction.z);
-            // Get the corresponding cell on our virtual grid
             Vector2Int cell = new Vector2Int(Mathf.RoundToInt(mousePosition.x / cellSize.x), Mathf.RoundToInt(mousePosition.y / cellSize.y));
             return cell * cellSize;
         }
@@ -100,26 +98,59 @@ public class MapDataManagerWindow : EditorWindow
     }
     private void HandleSceneViewInputs(Vector2 cellCenter)
     {
-        // Filter the left click so that we can't select objects in the scene
+        // 씬 내에서 객체를 선택못하게 하기 위함.
         if (Event.current.type == EventType.Layout)
         {
             HandleUtility.AddDefaultControl(0); // Consume the event
         }
-        // We have a prefab selected and we are clicking in the scene view with the left button
-        if (paletteIndex < palette.Count && Event.current.type == EventType.MouseDown && Event.current.button == 0)
+        // 프리팹을 선택하고 씬뷰를 클릭할경우.
+        if (paletteIndex < palette.Count && Event.current.type ==
+            EventType.MouseDown && Event.current.button == 0)
         {
-            // Create the prefab instance while keeping the prefab link
+            // 프리팹과 연결을 유지하면서 생성.
             GameObject prefab = palette[paletteIndex];
             GameObject gameObject = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
             gameObject.transform.position = cellCenter;
-            if(rotation90)
+            if (rotation90)
             {
                 gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
             }
-            // Allow the use of Undo (Ctrl+Z, Ctrl+Y).
+            // Undo 사용.
             Undo.RegisterCreatedObjectUndo(gameObject, "");
         }
     }
+    private void DisplayVisualHelp(Vector2 cellCenter)
+    {
+        // 월드 공간의 마우스 위치 가져오기.
+        Ray guiRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+        Vector3 mousePosition = guiRay.origin - guiRay.direction * (guiRay.origin.z / guiRay.direction.z);
+
+        // 그리드에서 해당 셀 가져 오기
+        Vector2Int cell = new Vector2Int(Mathf.RoundToInt(mousePosition.x / cellSize.x), Mathf.RoundToInt(mousePosition.y / cellSize.y));
+        cellCenter = cell * cellSize;
+
+        // 그려지는 정점.
+        Vector3 topLeft = cellCenter + Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;
+        Vector3 topRight = cellCenter - Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;
+        Vector3 bottomLeft = cellCenter + Vector2.left * cellSize * 0.5f - Vector2.up * cellSize * 0.5f;
+        Vector3 bottomRight = cellCenter - Vector2.left * cellSize * 0.5f - Vector2.up * cellSize * 0.5f;
+
+        // Rendering
+        Handles.color = Color.green;
+        Vector3[] lines = { topLeft, topRight, topRight, bottomRight, bottomRight, bottomLeft, bottomLeft, topLeft };
+        Handles.DrawLines(lines);
+    }
+    private void OnFocus()
+    {
+        //기존 삽입했던 delegate 삭제.
+        SceneView.duringSceneGui -= this.OnSceneGUI;
+        //다시 추가.
+        SceneView.duringSceneGui += this.OnSceneGUI;
+        RefreshPalette();
+    }
+    #endregion
+
+    #region GUI data Func
     private void RefreshPalette()
     {
         palette.Clear();
@@ -136,37 +167,11 @@ public class MapDataManagerWindow : EditorWindow
 
         }
     }
-    private void DisplayVisualHelp(Vector2 cellCenter)
-    {
-        // Get the mouse position in world space such as z = 0
-        Ray guiRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-        Vector3 mousePosition = guiRay.origin - guiRay.direction * (guiRay.origin.z / guiRay.direction.z);
-
-        // Get the corresponding cell on our virtual grid
-        Vector2Int cell = new Vector2Int(Mathf.RoundToInt(mousePosition.x / cellSize.x), Mathf.RoundToInt(mousePosition.y / cellSize.y));
-        cellCenter = cell * cellSize;
-        // Vertices of our square
-        Vector3 topLeft = cellCenter + Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;
-        Vector3 topRight = cellCenter - Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;
-        Vector3 bottomLeft = cellCenter + Vector2.left * cellSize * 0.5f - Vector2.up * cellSize * 0.5f;
-        Vector3 bottomRight = cellCenter - Vector2.left * cellSize * 0.5f - Vector2.up * cellSize * 0.5f;
-
-        // Rendering
-        Handles.color = Color.green;
-        Vector3[] lines = { topLeft, topRight, topRight, bottomRight, bottomRight, bottomLeft, bottomLeft, topLeft };
-        Handles.DrawLines(lines);
-    }
-    private void OnFocus()
-    {
-        SceneView.duringSceneGui -= this.OnSceneGUI;
-        SceneView.duringSceneGui += this.OnSceneGUI;
-        RefreshPalette();
-    }
+    #endregion
     private void OnDestroy()
     {
         SceneView.duringSceneGui -= this.OnSceneGUI;
     }
-    private bool rotation90 = false;
     private void OnGUI()
     {
         paintMode = GUILayout.Toggle(paintMode, "start painting", "button", GUILayout.Height(60f));
@@ -178,12 +183,9 @@ public class MapDataManagerWindow : EditorWindow
         {
             // Get a preview for the prefab
             Texture2D texture = AssetPreview.GetAssetPreview(prefab);
-            
             paletteIcons.Add(new GUIContent(prefab.name,texture));
-            
         }
         palleteScollPos = GUILayout.BeginScrollView(palleteScollPos);
-        // Display the grid
         paletteIndex = GUILayout.SelectionGrid(paletteIndex, paletteIcons.ToArray(), 4,GUILayout.MaxWidth(500));
         GUILayout.EndScrollView();
 
@@ -230,10 +232,6 @@ public class MapDataManagerWindow : EditorWindow
         {
             LoadMapFile();
         }
-
-
-
-
     }
     void CreateNecessaryObject()
     {
@@ -322,20 +320,11 @@ public class MapDataManagerWindow : EditorWindow
         {
             birdList.Add(FindPrefab(bird));
         }
-        //Resources.LoadAll<GameObject>("Prefabs/CachingOnecePrefabs");
-
-        //ObstacleInfo info = new ObstacleInfo();
-
-        //mainCamera,BirdGun,GameManager를 캐싱.
         GameObject gameManager = null, mainCamera = null, birdGun = null, worldRect = null;
-
         GameObject obj;
         foreach (var obstacle in data.obstacleInfoList)
         {
             obj = FindPrefab(obstacle);
-            
-
-            // obj = PrefabUtility.LoadPrefabContents(path);
             if (obj != null)
             {
                 obj = PrefabUtility.InstantiatePrefab(obj) as GameObject;
@@ -354,44 +343,7 @@ public class MapDataManagerWindow : EditorWindow
                 obj.name = obstacle.objectName;
             }
         }
-        //if (!ConnectinginScripsInfo(data, gameManager, mainCamera, birdGun, worldRect))
-        //{
-        //    EditorUtility.DisplayDialog("오류", "data,camera,birdgun,worldRect 중 null이 있습니다", "확인");
-        //}
-
-        //birdGunController.gameManager = manager;
     }
-    //private bool ConnectinginScripsInfo(AngryBirdMapData data,GameObject gameManager,GameObject mainCamera,
-    //    GameObject birdGun,GameObject wordRect)
-    //{
-    //    if (data == null || gameManager == null || mainCamera == null || birdGun == null || wordRect == null)
-    //        return false;
-    //    GameObject tmpObj;
-    //    //bird 들 세팅.
-    //    GameManager manager = gameManager.GetComponent<GameManager>();
-    //    //기존 prefavb에 있던 자료 클리어.
-    //    manager.birdList.Clear();
-    //    manager.BirdGun = birdGun;
-    //    manager.mainCamera = mainCamera;
-    //    for (int i = 0; i < data.birdInfoList.Count; ++i)
-    //    {
-    //        tmpObj = FindPrefab(data.birdInfoList[i]);
-    //        manager.birdList.Add(tmpObj);
-    //    }
-    //    //world Boundary세팅
-    //    WorldArea area = wordRect.GetComponent<WorldArea>();
-    //    area.worldRect = data.worldArea;
-    //    area.range = data.worldRange;
-
-    //    //camera 세팅
-    //    CamFollow fllow = mainCamera.GetComponent<CamFollow>();
-    //    fllow.WorldRect = wordRect;
-
-    //    //birdGun Setting
-    //    StrapController birdGunController = birdGun.GetComponent<StrapController>();
-    //    birdGunController.mainCamera = mainCamera.GetComponent<Camera>();
-    //    return true;
-    //}
     private GameObject FindPrefab(ObstacleInfo info)
     {
         return FindPrefab(info.objectName);

@@ -51,7 +51,6 @@ namespace YH_SingleTon
                 if (mapData.obstacleInfoList[i].objectName == "GameManager")
                     continue;
                 obj = YH_SingleTon.YH_ObjectPool.Instance.GetObj(mapData.obstacleInfoList[i].objectName);
-                // obj = PrefabUtility.LoadPrefabContents(path);
                 if (obj != null)
                 {
                     if (mapData.obstacleInfoList[i].objectName == "GameManager")
@@ -87,14 +86,10 @@ namespace YH_SingleTon
             //CamFollow fllow = mainCamera.GetComponent<CamFollow>();
             YH_SingleTon.CameraManager.Instance.originSize = data.cameraSize;
             YH_SingleTon.CameraManager.Instance.originPosition = data.obstacleInfoList.Find(d => d.objectName == "Main Camera").objPosition;
-
             //world Boundary세팅
             YH_SingleTon.WorldArea.Instance.worldRect = data.worldArea;
             YH_SingleTon.WorldArea.Instance.range = data.worldRange;
-
-
             //Init 순서 중요
-            //YH_SingleTon.CameraManager.Instance.Init();
             YH_SingleTon.GameManager.Instance.Init();
             YH_SingleTon.StrapController.Instance.Init();
             YH_SingleTon.ScoreManager.Instance.Init();
@@ -107,10 +102,6 @@ namespace YH_SingleTon
 }
 namespace YH_Data
 {
-
-
-
-
     [System.Serializable]
     public struct ObstacleInfo
     {
@@ -121,7 +112,7 @@ namespace YH_Data
         public bool isStatic;
     }
 
-    public class Data
+    public abstract class Data
     {
         public string objectToJson()
         {
@@ -136,7 +127,7 @@ namespace YH_Data
     [System.Serializable]
     public class AngryBirdMapData : Data
     {
-        //모든 오브젝트
+        //모든 장애물 오브젝트
         public List<ObstacleInfo> obstacleInfoList = new List<ObstacleInfo>();
         //gameManager에 저장될 값.
         public List<string> birdInfoList = new List<string>();
@@ -164,7 +155,6 @@ namespace YH_Data
             birdInfoList.Clear();
         }
     }
-
     [System.Serializable]
     public class PlayerCommonData : Data
     {
