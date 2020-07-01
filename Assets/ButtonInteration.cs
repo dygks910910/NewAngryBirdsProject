@@ -9,7 +9,7 @@ public class ButtonInteration : MonoBehaviour
     float sliderVolume;
     public void Start()
     {
-        sliderVolume = YH_Data.DataManager.Instance.playerCommonData.masterVolume;
+        sliderVolume = YH_SingleTon.DataManager.Instance.playerCommonData.masterVolume;
     }
     public void DisableThis()
     {
@@ -21,7 +21,7 @@ public class ButtonInteration : MonoBehaviour
     }
     public void SetVolum()
     {
-        YH_Data.DataManager.Instance.playerCommonData.masterVolume = volumeSlider.GetComponent<Slider>().value;
+        YH_SingleTon.DataManager.Instance.playerCommonData.masterVolume = volumeSlider.GetComponent<Slider>().value;
     }
     public void EnableThis()
     {

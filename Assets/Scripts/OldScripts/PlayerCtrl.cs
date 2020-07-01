@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class PlayerCtrl : MonoBehaviour {
     public GameObject[] birds;
     public GameObject StartPos;
-    private int BirdCount = 0;
     public GameObject slider;
     private Slider Slidervalue;
     [SerializeField]private Vector2 Direction;

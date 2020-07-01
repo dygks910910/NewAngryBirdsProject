@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using YH_SingleTon;
 
-namespace YH_Class
+namespace YH_SingleTon
 {
-    public class WorldArea : MonoBehaviour
+    public class WorldArea : Singleton<WorldArea>
     {
         [Tooltip("Left top이 원점")]
         public Rect worldRect;

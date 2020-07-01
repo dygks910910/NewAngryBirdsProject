@@ -86,10 +86,6 @@ namespace YH_CustomEditor
 
 
         }
-        private void OnEnable()
-        {
-            
-        }
         private void CreateObstacleObject()
         {
             GameObject tmpGameobj = new GameObject(gameObjectName);
@@ -209,10 +205,7 @@ namespace YH_CustomEditor
 
 
         }
-        private void OnEnable()
-        {
-
-        }
+      
         private void CreateObstacleObject()
         {
             GameObject tmpGameobj = new GameObject(gameObjectName);

@@ -11,7 +11,8 @@ public class PigInteraction : MonoBehaviour
     const int MAX_STATE_COUNT = 3;
     private int[] hpDevisionStage = new int[MAX_STATE_COUNT];
     int preIdx = -1;
-
+    public delegate void PigDieProcessing(GameObject obj,ref PigDieProcessing evtHandle);
+    public event PigDieProcessing pigDieEvtHandle; 
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -26,9 +27,12 @@ public class PigInteraction : MonoBehaviour
         float power = (int)YH_Helper.YH_Helper.CalcPower(collision);
 
         //외부 힘 충격량 계산.
-        pigHp -= power ;
-        if(pigHp > 0)
-            YH_Helper.YH_Helper.Create3DScore((int)power * 10, gameObject.transform.position);
+        if((int)pigHp > 0)
+        {
+            pigHp -= power;
+            YH_Helper.YH_Helper.Create3DScore((int)power * 100, gameObject.transform.position);
+
+        }
 
 
     }
@@ -56,6 +60,7 @@ public class PigInteraction : MonoBehaviour
         {
             YH_Helper.YH_Helper.DestoryObject(destroyEffect, gameObject);
             YH_Helper.YH_Helper.Create3DScore(5000, gameObject.transform.position,Color.green);
+            pigDieEvtHandle(gameObject, ref pigDieEvtHandle);
         }   
 
     }

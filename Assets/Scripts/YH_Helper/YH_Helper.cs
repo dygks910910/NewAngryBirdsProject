@@ -29,19 +29,20 @@ namespace YH_Helper
             return (string[])sortingLayersProperty.GetValue(null, new object[0]);
         }
 
-        public static void BirdDieProcessing(GameObject pivotObj,GameObject birdObj)
+        public static void BirdDieProcessing(GameObject birdObj)
         {
             //애니메이션 변수 초기화.
             Animator anim = birdObj.GetComponent<Animator>();
             anim.SetBool("IsCollision", false);
             anim.SetBool("ResetAnimation", false);
-
-            BirdReturnToObjPool(pivotObj);
             CreateBirdDieEffect(birdObj);
+            BirdReturnToObjPool(birdObj);
+
         }
         private static void BirdReturnToObjPool(GameObject pivotObj)
         {
-
+            pivotObj.transform.position = Vector3.zero;
+            pivotObj.transform.rotation = Quaternion.identity;
             YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(pivotObj);
         }
         private static void CreateBirdDieEffect(GameObject birdObj)
@@ -87,26 +88,21 @@ namespace YH_Helper
                 power += collision.otherRigidbody.velocity.magnitude;
             }
             power += collision.relativeVelocity.magnitude;
-            YH_SingleTon.ScoreManager.Instance.AddScore(250);
             return power;
         }
         public static void DestoryObject(GameObject destoryEffect, GameObject obj)
         {
-            //if (gameObject.CompareTag("WoodObstacle"))
-            //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
-            //else if (gameObject.CompareTag("IceObstacle"))
-            //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
-            //else if (gameObject.CompareTag("StoneObstacle"))
-            //    YH_Effects.Effects.CreateWoodBreakEffect(gameObject.transform.position);
-            //Destroy(gameObject);
+            DestoryObject(destoryEffect.name, obj);
+        }
+        public static void DestoryObject(string EffectName, GameObject obj)
+        {
             GameObject tmpObj;
-            tmpObj = YH_SingleTon.YH_ObjectPool.Instance.GetObj(destoryEffect.name);
+            tmpObj = YH_SingleTon.YH_ObjectPool.Instance.GetObj(EffectName);
             tmpObj.transform.position = obj.transform.position;
             tmpObj.GetComponent<ParticleSystem>().Play();
 
             YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(obj);
         }
-
         public static void Create3DScore(int score,Vector3 position)
         {
             Create3DScore(score, position, Color.white);

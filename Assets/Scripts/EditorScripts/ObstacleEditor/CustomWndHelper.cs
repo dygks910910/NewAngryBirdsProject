@@ -34,6 +34,14 @@ namespace YH_CustomEditor
         {
             toggle = GUILayout.Toggle(toggle, text);
         }
+        public static void CreateIntField(string title,ref int score)
+        {
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField(title);
+            score = EditorGUILayout.IntField(score);
+            EditorGUILayout.EndHorizontal();
+
+        }
     }
     public class PopupWindow : EditorWindow
     {

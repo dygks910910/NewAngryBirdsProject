@@ -11,11 +11,6 @@ public class GameCtrl : MonoBehaviour {
     public GameObject VictoryPanel;
     public GameObject FailPanel;
 
-
-    void Start()
-    {
-
-    }
     void Update()
     {
        for(int i = 0; i  < Pigs.Count; ++i)

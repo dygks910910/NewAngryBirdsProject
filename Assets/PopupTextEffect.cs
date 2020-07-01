@@ -21,7 +21,7 @@ public class PopupTextEffect : MonoBehaviour
         gameObject.transform.position = position;
         int score;
         Int32.TryParse(str,out score);
-        YH_SingleTon.ScoreManager.Instance.AddScore(score);
+        //YH_SingleTon.ScoreManager.Instance.AddScore(score);
         StartCoroutine(PopupEffect());
     }
     private IEnumerator PopupEffect()
@@ -41,7 +41,7 @@ public class PopupTextEffect : MonoBehaviour
 
         yield return wf1sec;
 
-        YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(gameObject);
+        YH_SingleTon.YH_ObjectPool.Instance.GiveBackObj(gameObject.transform.parent.gameObject);
     }
    
 }

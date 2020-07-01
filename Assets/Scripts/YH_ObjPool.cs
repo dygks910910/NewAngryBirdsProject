@@ -66,6 +66,8 @@ namespace YH_SingleTon
         GameObject baseObject;
         public void LoadAllPrefabs()
         {
+            if (ObjectDic.Count > 0)
+                return;
             baseObject = new GameObject("ObjectPool");
             //ObjectDic = Resources.LoadAll("Prefabs").ToDictionary(data => data.name, data=> data as GameObject);
             GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/CachingPrefabs");
@@ -81,7 +83,7 @@ namespace YH_SingleTon
             if(ObjectDic[name].Count > 1)
             {
                 GameObject obj = ObjectDic[name].Dequeue();
-                obj.transform.parent = null;
+                obj.transform.SetParent(null);
                 obj.SetActive(true);
                 Debug.Log("getObj " + name);
                 return obj;
@@ -108,7 +110,7 @@ namespace YH_SingleTon
         public void GiveBackObj(GameObject obj)
         {
             obj.SetActive(false);
-            obj.transform.parent = baseObject.transform;
+            obj.transform.SetParent(baseObject.transform);
 
             if(!ObjectDic.ContainsKey(obj.name))
             {
@@ -122,7 +124,8 @@ namespace YH_SingleTon
             GameObject tmpObj;
             for (int i = 0; i < objs.Length; ++i)
             {
-                ObjectDic.Add(objs[i].name, new Queue<GameObject>());
+                if(ObjectDic.ContainsKey(objs[i].name) == false)
+                     ObjectDic.Add(objs[i].name, new Queue<GameObject>());
                 for (int genCount = 0; genCount < fillCount; ++genCount)
                 {
                     tmpObj = CreateObject(objs[i]);

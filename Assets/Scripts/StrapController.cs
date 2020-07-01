@@ -1,20 +1,21 @@
 ﻿using System.Collections;
 using TMPro.EditorUtilities;
 using UnityEngine;
+using YH_Class;
+using YH_SingleTon;
 
-
-namespace YH_Class
+namespace YH_SingleTon
 {
-    public class StrapController : MonoBehaviour
+    public class StrapController : YH_SingleTon.Singleton<StrapController>
     {
       
         public UnityEngine.Color StrapColor;
-        public Camera mainCamera;
         public GameObject bird;
         //public GameManager gameManager;
 
-        
 
+        public bool IsInputEnable = false;
+        private GameObject mainCamera;
         private float StrapHeight = 0.1f;
         private float StrapMaxLength = 1.5f;
         private float StrapMaxPower = 20;
@@ -29,15 +30,26 @@ namespace YH_Class
         private Vector2 BetweenStrapCenter;
         private Vector3 cameraOriginPosition;
         private Rect availableArea;
-        private CamFollow camfllow;
+        //private YH_Class.CamFollow camfllow;
         // Start is called before the first frame update
         LineRenderer InnerLine;
         LineRenderer OuterLine;
         //private CamFollow camfllow;
-        public delegate void ShotingDo();
+        public delegate void ShotingDo(GameObject bird);
         public event ShotingDo shotingEventHandler;
-        private void Start()
+
+        public void Awake()
         {
+            shotingEventHandler += ShotingBird;
+        }
+        public  void Init()
+        {
+            StopAllCoroutines();
+            mainCamera = GameObject.Find("Main Camera");
+            GameObject birdGun =  GameObject.Find("BirdGun");
+            OuterStrap = birdGun.transform.Find("OuterStrap").gameObject;
+            InnerStrap = birdGun.transform.Find("InnerStrap").gameObject;
+
             InnerPos = InnerStrap.transform.position;
             OuterPos = OuterStrap.transform.position;
             BetweenStrapCenter = Vector3.Lerp(OuterPos, InnerPos, 0.5f);
@@ -58,9 +70,9 @@ namespace YH_Class
 
             SetStrapLine(InnerPos, OuterPos, PosForDrawLine);
             cameraOriginPosition = mainCamera.transform.position;
-            camfllow = mainCamera.GetComponent<CamFollow>();
+            //camfllow = mainCamera.GetComponent<CamFollow>();
             //ReloadBirds(gameManager.GetNextBird());
-            shotingEventHandler += ShotingBird;
+            GameManager.Instance.ReloadBurdGun();
         }
         // Update is called once per frame
         void Update()
@@ -70,7 +82,7 @@ namespace YH_Class
                 MouseInput();
             else
             {
-                shotingEventHandler();
+                shotingEventHandler(bird);
             }
             //bird.transform.forward  = Vector3.Normalize(BetweenStrapCenter - MousePosition);
 
@@ -81,9 +93,9 @@ namespace YH_Class
         {
             if(bird != null)
             {
-                MouseClick();
-                MouseDrag();
-                MouseButtonUp();
+                    MouseClick();
+                    MouseDrag();
+                    MouseButtonUp();
             }
            
         }
@@ -113,7 +125,7 @@ namespace YH_Class
             {
                 // 마우스 왼쪽 버튼을 누르고 있는 도중의 처리
                 MousePosition = Input.mousePosition;
-                MousePosition = mainCamera.ScreenToWorldPoint(MousePosition);
+                MousePosition = CameraManager.Instance.cam.ScreenToWorldPoint(MousePosition);
                 Vector2 direction = Vector3.Normalize(MousePosition - BetweenStrapCenter);
                 if (Vector3.Cross(new Vector3(0, 1, 0), direction).z < 0)
                 {
@@ -145,7 +157,7 @@ namespace YH_Class
             if (Input.GetMouseButtonDown(0))
             {
                 MousePosition = Input.mousePosition;
-                MousePosition = mainCamera.ScreenToWorldPoint(MousePosition);
+                MousePosition = CameraManager.Instance.cam.ScreenToWorldPoint(MousePosition);
 
                 if (true == availableArea.Contains(MousePosition))
                 {
@@ -177,7 +189,7 @@ namespace YH_Class
                 // 마우스 왼쪽 버튼을 뗄 때의 처리
             }
         }
-        private void ShotingBird()
+        private void ShotingBird(GameObject bird)
         {
             //슈팅 방향 설정.
             Vector2 shotingDir = (BetweenStrapCenter - ShotingMousePosition).normalized ;
@@ -194,7 +206,7 @@ namespace YH_Class
             rgidBdy.AddForce(shotingDir * fForce, ForceMode2D.Impulse);
 
             bird.GetComponentInChildren<BirdAnimationChanger>().birdState = eBirdState.FLY;
-            camfllow.bird = bird.transform.Find(bird.name);
+            YH_SingleTon.CameraManager.Instance.bird = bird.transform;
             Shoting = false;
             bird = null;
         }

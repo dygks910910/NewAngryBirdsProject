@@ -12,70 +12,117 @@ namespace YH_SingleTon
     public class GameManager : Singleton<GameManager>
     {
         [Tooltip("새들을 저장하는 순서.순서대로 장전된다.")]
-        public List<GameObject> birdList;
-        public GameObject BirdGun;
-        public GameObject mainCamera;
-        public Text scoreText;
-        public float waitBirdOffset = 0;
-        
-        public delegate int OnHitObject(int score,GameObject hitedObj);
-        public event OnHitObject OnchangedScore;
-        
-        private CamFollow camFollow;
+        public List<GameObject> birdList = new List<GameObject>();
+        public float waitBirdOffset = 1.0f;
+
+
+        private GameObject BirdGun;
+        private GameObject mainCamera;
         private static WaitForSeconds CheckBirdColliderTerm = new WaitForSeconds(0.1f);
-        private StrapController birdGunController;
         private Queue<GameObject> birdQueue = new Queue<GameObject>();
         private WaitForSeconds PullBirdTerm = new WaitForSeconds(0.01f);
+        private WaitForSeconds OneSecWait = new WaitForSeconds(1);
+        private WaitForSeconds GameOverDelay = new WaitForSeconds(3);
+        LinkedList<GameObject> pigList = new LinkedList<GameObject>();
 
-        
+        GameObject thisGameobj;
         // Start is called before the first frame update
-        void Start()
+        public void Init()
         {
-            YH_SingleTon.YH_ObjectPool.Instance.LoadAllPrefabs();
-            birdGunController = BirdGun.GetComponent<StrapController>();
-            camFollow = mainCamera.GetComponent<CamFollow>();
-            GameObject bird;
+            StopAllCoroutines();
+            checkGameoverCorutine = null;
+            YH_SingleTon.CameraManager.Instance.Init();
+            YH_SingleTon.ScoreManager.Instance.Init();
+            //StrapController.Instance.Init();
+            if (birdList.Count > 0)
+                birdList.Clear();
+            if (birdQueue.Count > 0)
+                birdQueue.Clear();
+            mainCamera = GameObject.Find("Main Camera");
+            BirdGun = GameObject.Find("BirdGun");
+
+            //camFollow = mainCamera.GetComponent<CamFollow>();
             Vector3 gunPosition = BirdGun.transform.position;
-            for (int i = 0; i < birdList.Count; ++i)
+            GameObject bird;
+            var birdStrList =  YH_SingleTon.DataManager.Instance.mapData.birdInfoList;
+            for (int i = 0; i < birdStrList.Count; ++i)
             {
-                bird = YH_SingleTon.YH_ObjectPool.Instance.GetObj(birdList[i].name);
-                //bird.SetActive(false);
-                birdQueue.Enqueue(bird);
-                birdList[i] = bird;
-                bird.transform.Translate(BirdGun.transform.position.x + (waitBirdOffset * i + 1), 0, 0);
+                bird = YH_ObjectPool.Instance.GetObj(birdStrList[i]);
+                bird.transform.position = new Vector3(BirdGun.transform.position.x + (waitBirdOffset * i + 1), 0, 0);
                 bird.GetComponentInChildren<Rigidbody2D>().isKinematic = true;
                 bird.GetComponentInChildren<CapsuleCollider2D>().enabled = false;
-                
+                birdQueue.Enqueue(bird);
+                birdList.Add(bird);
+
             }
-            
-            ReloadBurdGun();
+            //ReloadBurdGun();
+            GameObject[] pigs = GameObject.FindGameObjectsWithTag("Pig");
+            GameObject tmpObj;
+            for(int i = 0; i < pigs.Length; ++i)
+            {
+                tmpObj = pigs[i];
+                tmpObj.GetComponent<PigInteraction>().pigDieEvtHandle += DeletePig;
+                pigList.AddLast(tmpObj);
+            }
+            if(gameObject.activeInHierarchy && checkGameoverCorutine == null)
+                checkGameoverCorutine =StartCoroutine(CheckGameoverState());
         }
-
-        // Update is called once per frame
-        void Update()
+        Coroutine checkGameoverCorutine;
+        private void OnDisable()
         {
+            StopCoroutine(CheckGameoverState());
+        }
+        IEnumerator CheckGameoverState()
+        {
+            while(true)
+            {
+                yield return GameOverDelay;
+                if (CheckGameOver())
+                {
+                    yield return GameOverDelay;
 
+                    GameObject tmpBirdObj;
+                    BirdAnimationChanger tmpScript;
+                    for (int i = 0; i < birdList.Count; ++i)
+                    {
+                        tmpBirdObj = birdList[i];
+                        tmpScript = tmpBirdObj.GetComponent<BirdAnimationChanger>();
+                        YH_Helper.YH_Helper.Create3DScore(10000, tmpBirdObj.transform.position, tmpScript.birdColor);
+                        yield return OneSecWait;
+                    }
+                    YH_SingleTon.MainUIController.Instance.SetScorePanelEnable(true);
+
+                    break;
+                }
+            }
+            checkGameoverCorutine = null;
+        }
+        
+        //strapController에서 실행되는 delegate용도.
+        public void DeleteBird(GameObject bird)
+        {
+            birdList.Remove(bird);
         }
         //return val 이 null일 경우에 새가 없음.
-        private void ReloadBurdGun()
+        public void ReloadBurdGun()
         {
             GameObject nextBird = GetNextBird();
             if (nextBird != null)
             {
-                birdList.Remove(nextBird);
-                StartCoroutine(CheckBirdCollided(nextBird.GetComponentInChildren<BirdAnimationChanger>()));
-                for (int i = 0; i < birdList.Count; ++i)
+                //birdList.Remove(nextBird);
+                //슈팅을 하게 되면 remove수행함.
+                YH_SingleTon.StrapController.Instance.shotingEventHandler += DeleteBird;
+                if(gameObject.activeInHierarchy)
+                    StartCoroutine(CheckBirdCollided(nextBird.GetComponentInChildren<BirdAnimationChanger>()));
+                //첫번쨰 새는 새총위에 장전되있기 때문에 수행하지않음.따라서 i는 1부터.
+                for (int i = 1; i < birdList.Count; ++i)
                 {
-                    StartCoroutine(PullbirdOne(birdList[i]));
+                    if(gameObject.activeInHierarchy)
+                        StartCoroutine(PullbirdOne(birdList[i]));
                 }
-                birdGunController.ReloadBirds(nextBird);
+                YH_SingleTon.StrapController.Instance.ReloadBirds(nextBird);
 
             }
-            else
-            {
-                //null이면 게임 종료.결과창 출력.
-            }
-
         }
         IEnumerator CheckBirdCollided(BirdAnimationChanger changer)
         {
@@ -100,9 +147,14 @@ namespace YH_SingleTon
                 yield return PullBirdTerm;
             }
         }
+        public void DeletePig(GameObject pig, ref PigInteraction.PigDieProcessing evtHandle)
+        {
+            pigList.Remove(pig);
+            evtHandle -= DeletePig;
+        }
         public GameObject GetNextBird()
         {
-            camFollow.SetOriginState();
+            //YH_SingleTon.CameraManager.Instance.SetOriginState();
             GameObject obj = null;
             if (birdQueue.Count > 0)
             {
@@ -111,10 +163,19 @@ namespace YH_SingleTon
             }
             return obj;
         }
-
-        private void LoadLevel()
-        { 
+        bool CheckGameOver()
+        {
+            if (birdQueue.Count < 0)
+                return true;
+            if (pigList.Count <= 0)
+                return true;
+            if (birdList.Count == 0 && pigList.Count > 0)
+                return true;
+            return false;
         }
+
+
+       
     }
     //[CustomEditor(typeof(GameManager))]
     //[CanEditMultipleObjects]

@@ -396,9 +396,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 337
-        y: 163
+        y: 141
         width: 28
-        height: 10
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,48 +408,6 @@ TextureImporter:
       bones: []
       spriteID: ba3aedfa3f21d6d4facdbd89d07ecac4
       internalID: -2030144200165915897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BUTTONS_SHEET_1366x253_10
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 152
-        width: 27
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddd86f56869566f4cbc0fab47b3bbf42
-      internalID: -4196860267922986116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BUTTONS_SHEET_1366x253_11
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 141
-        width: 28
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d87b2fa48930a214d886f3008d408bda
-      internalID: -8842390090019250125
       vertices: []
       indices: 
       edges: []

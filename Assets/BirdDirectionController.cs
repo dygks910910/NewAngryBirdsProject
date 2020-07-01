@@ -7,12 +7,12 @@ namespace YH_Class
 
     public class BirdDirectionController : MonoBehaviour
     {
-        private Rigidbody2D rigidbody;
+        private Rigidbody2D rBody;
         private BirdAnimationChanger animChanger;
         // Start is called before the first frame update
         void Start()
         {
-            rigidbody = GetComponent<Rigidbody2D>();
+            rBody = GetComponent<Rigidbody2D>();
             animChanger = GetComponent<BirdAnimationChanger>();
         }
 
@@ -22,7 +22,7 @@ namespace YH_Class
             if (animChanger.birdState == eBirdState.FLY)
             {
                 //날아가는 방향에 따라 회전시켜줌.
-                Vector3 direction = Vector3.Normalize(rigidbody.velocity);
+                Vector3 direction = Vector3.Normalize(rBody.velocity);
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }

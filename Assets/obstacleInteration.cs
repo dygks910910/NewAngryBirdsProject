@@ -48,8 +48,12 @@ public class obstacleInteration : MonoBehaviour
         float power = YH_Helper.YH_Helper.CalcPower(collision);
         //외부 힘 충격량 계산.
         hp -= power;
-        if(hp > 0)
-             YH_Helper.YH_Helper.Create3DScore((int)power * 10, gameObject.transform.position);
+        if((int)hp > 0)
+        {
+            int powerInt = (int)power * 100;
+            if(powerInt > 0)
+                YH_Helper.YH_Helper.Create3DScore(powerInt, gameObject.transform.position);
+        }
     }
 
 
